@@ -1,0 +1,4 @@
+{
+	"dbUrl": "mongodb://localhost/SPA_blog_v1",
+	"port": "8000"
+}
