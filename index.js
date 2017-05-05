@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
 const colors = require('colors');
 const path = require('path');
+const history = require('connect-history-api-fallback');
 
 const config = require('./config');
 const api = require('./routes/api_v1.0');
@@ -18,6 +19,7 @@ const server = http.createServer(app);
 // Server middlewares
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(history());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
