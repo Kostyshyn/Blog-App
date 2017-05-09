@@ -33,7 +33,7 @@ router.get('/posts', function(req, res, next){
 });
 
 router.get('/userposts', function(req, res, next){
-	User.getUserPosts({username: 'Kostyshyn'}).then(function(user){
+	User.getUserPosts('Kostyshyn').then(function(user){
 		sendSuccess(res, user.posts);
 	}).catch(function(err){
 		next(err);
@@ -57,12 +57,12 @@ router.post('/user', function(req, res, next){
 router.post('/posts', function(req, res, next){
 	User.getUser({username: 'Kostyshyn'}).then(function(user){
 		var post = {
-			author: user,
+			author: user.id,
 			title: req.body.title,
 			text: req.body.text,
 			date: req.body.date
 		};
-		Post.addPost(post, user.username).then(function(post){
+		Post.addPost(post, user.id).then(function(post){
 			var loc = 'api/posts/' + post.href;
 			res.status(201);
 			res.location(loc);

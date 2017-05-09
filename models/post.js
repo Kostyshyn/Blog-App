@@ -130,7 +130,7 @@ module.exports.addPost = function(post, user){
 			if (err){
 				reject(err);
 			} else {
-				var query = {username: user};
+				var query = { _id: user };
 				mongoose.model('User').findOne(query, function(err, user){
 					if (err){
 						reject(err);
@@ -152,9 +152,7 @@ module.exports.addPost = function(post, user){
 
 module.exports.updatePost = function(href, user, post, options){
 	return new Promise(function(resolve, reject){
-		var query = {
-			username: user
-		};
+		var query = { _id: user };
 		mongoose.model('User').findOne(query, function(err, user){
 			if (err){
 				reject(err);
@@ -177,9 +175,7 @@ module.exports.updatePost = function(href, user, post, options){
 
 module.exports.deletePost = function(href, user){
 	return new Promise(function(resolve, reject){
-		var query = {
-			username: user
-		};
+		var query = { _id: user };
 		mongoose.model('User').findOne(query, function(err, user){
 			if (err){
 				reject(err);
@@ -192,7 +188,16 @@ module.exports.deletePost = function(href, user){
 					if (err){
 						reject(err);
 					} else {
-						resolve(post);
+						user.update({
+							$pull: { posts: post.id }
+						}, { safe: true, new: true });
+						user.save(function(err, user){
+							if (err){
+								reject(err);
+							} else {
+								resolve(user);
+							}		
+						});
 					}
 				});	
 			}
@@ -209,7 +214,7 @@ module.exports.like = function(href, user){
 			if (err){
 				reject(err);
 			} else {
-				var query = { username: user };
+				var query = { _id: user };
 				mongoose.model('User').findOne(query, function(err, user){
 					if (err){
 						reject(err);
@@ -222,10 +227,20 @@ module.exports.like = function(href, user){
 							if (err){
 								reject(err);
 							} else if (like){
-								like.remove(function(err, removed){
-									if (err){
-										reject(err);
-									}
+								var p = like.remove();
+								p.then(function(like){
+									Post.findOneAndUpdate(postQuery, 
+										{$pull: {'likes': like}}, 
+										{safe: true, new: true}, 
+										function(err, post){
+										if (err){
+											reject(err);
+										} else {
+											resolve(post);
+										}
+									});
+								}).catch(function(err){
+									reject(err);
 								});
 							} else {
 								Like.create(query, function(err, like){
@@ -267,44 +282,4 @@ function unique(arr){
 	}
 	return Object.keys(o);
 };
-
-
-			// Like.findOne(query, function(err, like){
-			// 	if (err){
-			// 		reject(err);
-			// 	} else if(like){
-			// 		var p = like.remove();
-			// 		p.then(function(like){
-			// 			Post.findOneAndUpdate(postQuery, 
-			// 				{$pull: {'likes': like}}, 
-			// 				{safe: true, new: true}, 
-			// 				function(err, post){
-			// 				if (err){
-			// 					reject(err);
-			// 				} else {
-			// 					resolve(post);
-			// 				}
-			// 			});
-			// 		}).catch(function(err){
-			// 			reject(err);
-			// 		});
-			// 	} else {
-			// 		Like.create(query, function(err, like){
-			// 			if (err){
-			// 				reject(err);
-			// 			} else {
-			// 				Post.findOneAndUpdate(postQuery, 
-			// 					{$push: {'likes': like}}, 
-			// 					{safe: true, new: true}, 
-			// 					function(err, post){
-			// 					if (err){
-			// 						reject(err);
-			// 					} else {
-			// 						resolve(post);
-			// 					}
-			// 				});
-			// 			}
-			// 		});
-			// 	}
-			// });
 
