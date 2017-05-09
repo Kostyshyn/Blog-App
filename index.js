@@ -19,7 +19,7 @@ const server = http.createServer(app);
 // Server middlewares
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(history());
+// app.use(history());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
