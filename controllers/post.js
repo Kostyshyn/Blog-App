@@ -19,8 +19,8 @@ exports.getPostByHref = function(req, res, next){
 
 exports.getPostsByTag = function(req, res, next){
 	var tag = req.params.tag;
-	Post.getPostByTag(tag).then(function(post){
-		sendSuccess(res, post);
+	Post.getPostByTag(tag).then(function(posts){
+		sendSuccess(res, posts);
 	}).catch(function(err){
 		next(err);
 	});

@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require('../../models/user');
-const Post = require('../../models/post');
+const authController = require('../../controllers/authentification');
+const userController = require('../../controllers/user');
+const postController = require('../../controllers/post');
 
 // require Models //
 
@@ -11,89 +12,43 @@ const Post = require('../../models/post');
 
 // API 
 
-router.get('/api', function(req, res, next){
-	res.json({
-		message: 'Hello from API!'
-	});
+// Post routes
+
+router.get('/posts', postController.getPosts);
+router.get('/posts/categories', postController.getTags);
+router.get('/posts/:href', postController.getPostByHref);
+router.get('/posts/categories/:tag', postController.getPostsByTag);
+
+router.post('/posts', isAuth, postController.addPost);
+router.delete('/posts/:href', isAuth, postController.deletePost);
+router.put('/posts/:href', isAuth, postController.updatePost);
+
+
+// User routes
+
+router.post('/login', authController.login);
+router.post('/signup', authController.signup);
+router.get('/logout', isAuth, authController.logout);
+
+
+
+router.get('/user', function(req, res, next){
+	if (req.user){
+		res.json(req.user.username);
+	} else {
+		res.json('No user');
+	}
 });
 
-router.post('/api', function(req, res, next){
-	var info = req.body.info;
-	console.log(info);
-	res.status(200);
-	res.send('Done');
-});
 
-router.get('/posts', function(req, res, next){
-	Post.getPosts(null).then(function(posts){
-		sendSuccess(res, posts);
-	}).catch(function(err){
-		next(err);
-	});
-});
-
-router.get('/userposts', function(req, res, next){
-	User.getUserPosts('Kostyshyn').then(function(user){
-		sendSuccess(res, user.posts);
-	}).catch(function(err){
-		next(err);
-	});
-});
-
-router.post('/user', function(req, res, next){
-	var user = {
-		username: 'Kostyshyn',
-		email: 'kostysyn@ua.fm',
-		password: 'pass'
-	};
-	User.addUser(user).then(function(user){
-		req.user = user;
-		sendSuccess(res, user);
-	}).catch(function(err){
-		next(err);
-	});
-});
-
-router.post('/posts', function(req, res, next){
-	User.getUser({username: 'Kostyshyn'}).then(function(user){
-		var post = {
-			author: user.id,
-			title: req.body.title,
-			text: req.body.text,
-			date: req.body.date
-		};
-		Post.addPost(post, user.id).then(function(post){
-			var loc = 'api/posts/' + post.href;
-			res.status(201);
-			res.location(loc);
-			res.json({
-				data: post,
-				message: 'Created',
-				location: loc,
-				status: 201
-			});
-		}).catch(function(err){
-			next(err);
-		});
-	}).catch(function(err){
-		next(err);
-	});
-});
 
 module.exports = router;
 
-function sendSuccess(res, data){
-	if (!data){
-		res.status(404);
-		res.json({
-			message: 'No content',
-			status: 404
-		});
+function isAuth(req, res, next){
+	if (req.isAuthenticated()){
+		return next();
 	} else {
-		res.status(200);
-		res.json({
-			data: data,
-			status: 200
-		});
+		res.status(401);
+		res.json({message: 'Unauthorized', status: 401});
 	}
 };

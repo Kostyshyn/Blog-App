@@ -54,7 +54,7 @@ var userSchema = mongoose.Schema({
 	}],
 	created: {
 		type: Date,
-		default: moment(new Date()).format();
+		default: Date.now
 	}
 });
 
@@ -117,19 +117,19 @@ module.exports.logout = function(id){
 	});
 };
 
-module.exports.login = function(id){
-	return new Promise(function(resolve, reject){
-		var query = { _id: id };
-		var update = { online: true };
-		User.findOneAndUpdate(query, update, {}, function(err, user){
-			if (err){
-				reject(err);
-			} else {
-				resolve(user);
-			}
-		});		
-	});
-};
+// module.exports.login = function(id){
+// 	return new Promise(function(resolve, reject){
+// 		var query = { _id: id };
+// 		var update = { online: true };
+// 		User.findOneAndUpdate(query, update, {}, function(err, user){
+// 			if (err){
+// 				reject(err);
+// 			} else {
+// 				resolve(user);
+// 			}
+// 		});		
+// 	});
+// };
 
 module.exports.deleteUser = function(user){
 	var query = { _id: user };

@@ -188,10 +188,10 @@ module.exports.deletePost = function(href, user){
 					if (err){
 						reject(err);
 					} else {
-						user.update({
-							$pull: { posts: post.id }
-						}, { safe: true, new: true });
-						user.save(function(err, user){
+						var query = { _id: user };
+						mongoose.model('User').findOneAndUpdate(query, {
+							$pull: { posts: post._id }
+						}, { safe: true, new: true }, function(err, user){
 							if (err){
 								reject(err);
 							} else {
@@ -209,8 +209,8 @@ module.exports.deletePost = function(href, user){
 
 module.exports.like = function(href, user){
 	return new Promise(function(resolve, reject){
-		var query = { href: href };
-		Post.findOne(query, function(err, post){
+		var postQuery = { href: href };
+		Post.findOne(postQuery, function(err, post){
 			if (err){
 				reject(err);
 			} else {

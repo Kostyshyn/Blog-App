@@ -10,6 +10,7 @@ const colors = require('colors');
 const path = require('path');
 const history = require('connect-history-api-fallback');
 
+const init = require('./passport/init');
 const config = require('./config');
 const api = require('./routes/api_v1.0');
 
@@ -29,6 +30,9 @@ app.use(expressSession({
 	saveUninitialized: true,
 	resave: true
 }));
+app.use(passport.initialize());
+app.use(passport.session());
+init(passport);
 
 
 /*  config  */
