@@ -81,7 +81,7 @@ module.exports.getPosts = function(limit){
 module.exports.getPostByHref = function(href){
 	var query = {href: href};
 	return new Promise(function(resolve, reject){
-		Post.findOne(query, function(err, post){
+		Post.findOne(query).populate('author', ['username', 'profile_img']).exec(function(err, post){
 			if (err){
 				reject(err);
 			} else {
@@ -94,7 +94,7 @@ module.exports.getPostByHref = function(href){
 module.exports.getPostByTag = function(tag){
 	var query = {tags: tag};
 	return new Promise(function(resolve, reject){
-		Post.find(query, function(err, post){
+		Post.find(query).populate('author', ['username', 'profile_img']).exec(function(err, post){
 			if (err){
 				reject(err);
 			} else {
@@ -187,7 +187,7 @@ module.exports.deletePost = function(href, user){
 				Post.findOneAndRemove(query, function(err, post){
 					if (err){
 						reject(err);
-					} else {
+					} else if (post){
 						var query = { _id: user };
 						mongoose.model('User').findOneAndUpdate(query, {
 							$pull: { posts: post._id }
@@ -198,6 +198,8 @@ module.exports.deletePost = function(href, user){
 								resolve(user);
 							}		
 						});
+					} else {
+						reject({ message: 'Post not found', stack: 'Post not found'});
 					}
 				});	
 			}

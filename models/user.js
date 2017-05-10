@@ -150,9 +150,9 @@ module.exports.deleteUser = function(user){
 	});
 };
 
-module.exports.getUserPosts = function(user){
+module.exports.getUserWithPosts = function(user){  // put 'href' to argument in controller
 	return new Promise(function(resolve, reject){
-		var query = { username: user };
+		var query = { href: user }; 
 		User.findOne(query).populate('posts').exec(function(err, user){
 			if (err){
 				reject(err);

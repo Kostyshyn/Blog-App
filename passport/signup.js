@@ -23,7 +23,8 @@ module.exports = function(passport){
 						password: createHash(password),
 						profile_img: req.body.profile_img,
 						info: req.body.info,
-						online: true
+						online: true,
+						created: Date.now()
 					};
 					User.addUser(user).then(function(user){
 						return done(null, user);
