@@ -41,7 +41,7 @@ exports.addPost = function(req, res, next){
 		title: req.body.title,
 		text: req.body.text,
 		tags: req.body.tags,
-		date: req.body.date
+		date: Date.now()
 	};
 	Post.addPost(post, currentUser).then(function(post){
 		var loc = 'api/posts/' + post.href;
@@ -65,9 +65,9 @@ exports.updatePost = function(req, res, next){
 		title: req.body.title,
 		text: req.body.text,
 		tags: req.body.tags,
-		update_date: req.body.date
+		update_date: Date.now()
 	};
-	Post.updatePost(href, currentUser, update, { new: true }).then(function(post){
+	Post.updatePost(href, currentUser, update, { new: true, safe: true }).then(function(post){
 		sendSuccess(res, post);
 	}).catch(function(err){
 		next(err);
@@ -78,6 +78,16 @@ exports.deletePost = function(req, res, next){
 	var href = req.params.href;
 	var currentUser = req.user.id;
 	Post.deletePost(href, currentUser).then(function(post){
+		sendSuccess(res, post);
+	}).catch(function(err){
+		next(err);
+	});
+};
+
+exports.like = function(req, res, next){
+	var href = req.params.href;
+	var currentUser = req.user.id;
+	Post.like(href, currentUser).then(function(post){
 		sendSuccess(res, post);
 	}).catch(function(err){
 		next(err);
@@ -99,3 +109,4 @@ function sendSuccess(res, data){
 		});
 	}
 };
+

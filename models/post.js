@@ -39,11 +39,11 @@ var postSchema = mongoose.Schema({
 		default: shortId.generate
 	},
 	date: {
-		type: String,
+		type: Date,
 		default: Date.now
 	},
 	update_date: {
-		type: String,
+		type: Date,
 		default: Date.now
 	}	
 });
@@ -68,13 +68,13 @@ var Like = module.exports = mongoose.model('Like', likeSchema);
 
 module.exports.getPosts = function(limit){
 	return new Promise(function(resolve, reject){
-		Post.find(function(err, posts){
+		Post.find({}).populate('author', ['username', 'profile_img']).exec(function(err, posts){
 			if (err){
 				reject(err);
 			} else {
 				resolve(posts);
 			}
-		}).limit(limit);
+		});
 	});
 };
 
@@ -230,13 +230,20 @@ module.exports.like = function(href, user){
 								var p = like.remove();
 								p.then(function(like){
 									Post.findOneAndUpdate(postQuery, 
-										{$pull: {'likes': like}}, 
-										{safe: true, new: true}, 
+										{ $pull: { 'likes': like.id }},
+										{ safe: true, new: true },
 										function(err, post){
 										if (err){
 											reject(err);
 										} else {
-											resolve(post);
+											user.likes.pull({ _id: like.id });
+											user.save(function(err, user){
+												if (err){
+													reject(err);
+												} else {
+													resolve(post);
+												}
+											});
 										}
 									});
 								}).catch(function(err){
@@ -252,7 +259,7 @@ module.exports.like = function(href, user){
 											if (err){
 												reject(err);
 											} else {
-												user.push.likes(like);
+												user.likes.push(like);
 												user.save(function(err, user){
 													if (err){
 														reject(err);

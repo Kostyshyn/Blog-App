@@ -17,6 +17,7 @@ const postController = require('../../controllers/post');
 router.get('/posts', postController.getPosts);
 router.get('/posts/categories', postController.getTags);
 router.get('/posts/:href', postController.getPostByHref);
+router.get('/posts/:href/like', isAuth, postController.like);
 router.get('/posts/categories/:tag', postController.getPostsByTag);
 
 router.post('/posts', isAuth, postController.addPost);
