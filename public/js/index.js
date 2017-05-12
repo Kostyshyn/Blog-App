@@ -6,9 +6,22 @@ import VueResource from 'vue-resource'
 import Main from '../components/Main.vue'
 import Home from '../components/Home.vue'
 import Posts from '../components/Posts.vue'
+import Login from '../components/Login.vue'
+import Signup from '../components/Signup.vue'
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
+
+import _ from '../bower/lodash/dist/lodash.min.js'
+import moment from '../bower/moment/min/moment.min.js'
+
+Vue.filter('chunk', function(value, size){
+	return _.chunk(value, size);
+});
+
+Vue.filter('moment', function(date){
+	return moment(date).format('ll');
+});
 
 export var router = new VueRouter({
     history: true,
@@ -22,7 +35,13 @@ router.map({
 	},
 	'/categories': {
 		component: Posts
-	}
+	},
+	'/login': {
+		component: Login
+	},
+	'/signup': {
+		component: Signup
+	},
 });
 
 // router.redirect({

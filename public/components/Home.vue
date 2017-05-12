@@ -1,37 +1,55 @@
 <template>
-	<section>
-		<h1>Home page</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus beatae repellat nulla tenetur delectus voluptate enim magnam, dolore quae culpa sed suscipit, consectetur architecto molestias praesentium similique molestiae sapiente laudantium.</p>
-		<hr>
-		<p>data: {{ data }}</p>	
-		<br>
-		<hr>
-		<input type="text" v-model="info">
-		<button class="button" v-on:click="sendData">Send</button>	
-	</section>
+	<div class="grid-row">
+		<div class="col-12">
+			<div class="main-page-header box">
+				<h1>Blog</h1>
+			</div>
+		</div>
+	</div>
+	<div class="posts-preview">
+		<div class="grid-row" v-if="posts" v-for="row in posts | chunk 3">
+			<post-preview :post="post" v-for="post in row"></post-preview>
+		</div>
+	</div>
 </template>
 
 <style>
-	p {
-		color: black;
-	}
+.main-page-header {
+	width: 100%;
+	height: 200px;
+	padding: 10px; 
+	/*margin-bottom: 20px;*/
+}
+.post-preview {
+	width: 100%;
+	height: auto;
+	transition: .3s;
+}
+.post-preview:hover {
+	/*box-shadow: 0px 0px 3px 1px #d4d4d5;*/
+}
 </style>
 
 <script>
+import PostPreview from './Post-preview.vue'
+
 export default {
+	name: 'Home',
+	components: {
+		PostPreview
+	},
 	data: function(){
 		return {
-			data: null,
-			info: null
+			posts: null
 		}
 	},
 	methods: {
 		getData: function(){
-			this.$http.get('/api').then(function(response){
+			this.$http.get('/api/posts').then(function(response){
 
-			this.data = response.data.message;
+			this.posts = response.data.data;
 
-			console.log('data:', this.data);
+			// console.log('post:', this.post);
 
 			}, function(response){
 			    // error callback

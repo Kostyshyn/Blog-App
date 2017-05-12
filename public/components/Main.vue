@@ -5,7 +5,7 @@
 			<div class="desktop_menu">
 				<ul>
 					<li><a v-link="{ path: '/', exact: true }">Home</a></li>
-					<li><a v-link="{ path: '/posts/categories' }">Categories</a></li>
+					<li><a v-link="{ path: '/categories' }">Categories</a></li>
 					<li><a v-link="{ path: '/contacts' }">Contacts</a></li>
 				</ul>
 			</div>
@@ -16,7 +16,7 @@
 				<div class="open_header">Меню</div>
 				<ul class="menu hidden">
 					<li><a v-link="{ path: '/' }" class="menu_active">Home</a></li>
-					<li><a v-link="{ path: '/categories' }">Categories</a></li>
+					<li><a v-link="{ path: '/posts/categories' }">Categories</a></li>
 					<li><a v-link="{ path: '/contacts' }">Contacts</a></li>
 					<li class="hidden_button"><a v-link="{ path: '/login' }" class="button">Login</a></li>
 					<li class="hidden_button"><a v-link="{ path: '/signup' }" class="button yellow">Sign Up</a></li>
@@ -34,7 +34,9 @@
 	</nav>
 	<div class="grid-container">
 		<div class="main-content">
-			<router-view></router-view>	
+			<section>
+				<router-view></router-view>	
+			</section>
 		</div>
 	</div>
 </template>
@@ -45,6 +47,22 @@
 	min-height: 100vh;
 	height: auto;
 	background-color: #eeeeee;
+}
+
+/*icons*/
+
+.calendar {
+	background-image: url('../img/calendar-grey.png');
+}
+.like {
+	background-image: url('../img/like.png')
+}
+.comment-icon {
+	background-image: url('../img/comment.png')
+}
+.big_icon {
+	width: 25px;
+	height: 25px;
 }
 /*******
 *******Navbar*******
@@ -230,6 +248,18 @@ nav {
 	}
 }
 @media screen and (max-width: 560px) {
+	[class*='col-'] {
+	  	float: left;
+	  	padding: 10px 0px;
+	}
+	section {
+		padding: 10px;
+		width: 100%;
+	}
+/*	.main-post-date, .main-post-author {
+		width: 49%;
+	}*/
+	.col-4 { width: 100%; }
 	.navbar_buttons {
 		display: none;
 	}
@@ -251,9 +281,12 @@ nav {
 <script>
 export default {
 	data: function(){
-		return {}
+		return {
+			user: null
+		}
 	},
 	methods: {
+		
 	}
 }
 </script>

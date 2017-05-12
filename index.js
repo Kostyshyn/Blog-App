@@ -53,7 +53,7 @@ db.once('connected', function(){
 
 // Routes
 
-app.use('/', api);
+app.use('/api', api);
 
 // Error handling
 
