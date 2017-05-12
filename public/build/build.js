@@ -74,11 +74,11 @@
 
 	var _Main2 = _interopRequireDefault(_Main);
 
-	var _Home = __webpack_require__(10);
+	var _Home = __webpack_require__(15);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Posts = __webpack_require__(17);
+	var _Posts = __webpack_require__(20);
 
 	var _Posts2 = _interopRequireDefault(_Posts);
 
@@ -97,7 +97,7 @@
 		'/': {
 			component: _Home2.default
 		},
-		'/posts': {
+		'/categories': {
 			component: _Posts2.default
 		}
 	});
@@ -14818,10 +14818,11 @@
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(8)
+	__webpack_require__(8)
+	__vue_script__ = __webpack_require__(12)
 	if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
 	  console.warn("[vue-loader] public/components/Main.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(9)
+	__vue_template__ = __webpack_require__(13)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -14847,94 +14848,22 @@
 
 /***/ }),
 /* 8 */
-/***/ (function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	// <template>
-	// 	<div>
-	//
-	// 		<ul>
-	// 			<li><a v-link="{ path: '/' }">Home</a></li>
-	// 	  		<li><a v-link="{ path: '/posts' }">Posts</a></li>
-	// 		</ul>
-	// 		<hr>
-	// 		<router-view></router-view>	
-	//
-	// 	</div>
-	// </template>
-	//
-	//
-	// <script>
-	exports.default = {
-		data: function data() {
-			return {};
-		},
-		methods: {}
-	};
-	// </script>
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports) {
-
-	module.exports = "\n<div>\n\n\t<ul>\n\t\t<li><a v-link=\"{ path: '/' }\">Home</a></li>\n  \t\t<li><a v-link=\"{ path: '/posts' }\">Posts</a></li>\n\t</ul>\n\t<hr>\n\t<router-view></router-view>\t\n\n</div>\n";
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	var __vue_styles__ = {}
-	__webpack_require__(11)
-	__vue_script__ = __webpack_require__(15)
-	if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
-	  console.warn("[vue-loader] public/components/Home.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(16)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
-	if (__vue_template__) {
-	__vue_options__.template = __vue_template__
-	}
-	if (!__vue_options__.computed) __vue_options__.computed = {}
-	Object.keys(__vue_styles__).forEach(function (key) {
-	var module = __vue_styles__[key]
-	__vue_options__.computed[key] = function () { return module }
-	})
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-3d1f951e/Home.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ }),
-/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(12);
+	var content = __webpack_require__(9);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(14)(content, {});
+	var update = __webpack_require__(11)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Home.vue", function() {
-				var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Home.vue");
+			module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Main.vue", function() {
+				var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Main.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -14944,21 +14873,21 @@
 	}
 
 /***/ }),
-/* 12 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(13)();
+	exports = module.exports = __webpack_require__(10)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\np {\n\tcolor: black;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.main-content {\n\twidth: 100%;\n\tmin-height: 100vh;\n\theight: auto;\n\tbackground-color: #eeeeee;\n}\n/*******\n*******Navbar*******\n******/\nnav {\n\twidth: 100%;\n\tz-index: 5;\n}\n.fixed_menu {\n\tbox-shadow: 0 0 10px rgba(0,0,0,0.5);\n\tbackground-color: #47c9af;\n\tcolor: white;\n\theight: 60px;\n\tposition: fixed;\n\ttop: 0;\n\ttransition: all .3s ease-out;\n\t-webkit-transform: translateY(0);\n\t        transform: translateY(0);\n}\n.hidden_top {\n\t-webkit-transform: translateY(-60px);\n\t        transform: translateY(-60px);\n}\n.desktop_menu {\n\tpadding-left: 25px;\n}\n.desktop_menu ul {\n\tmargin: 0;\n\tpadding: 0;\n}\n.desktop_menu ul li {\n\tfloat: left;\n\tlist-style-type: none;\n\tdisplay: inline-block;\n\tmargin-right: 18px; \n\tmargin-top: 18px;\t\n}\n.desktop_menu ul li a {\n\ttext-decoration: none;\t\n\tcolor: white;\n\tfont-size: 18px;\n}\n.desktop_menu ul li a::after {\n    content: '';\n    display: block;\n    width: 0;\n    height: 2px;\n    background: white;\n    transition: width .2s ease-out;\n}\n.desktop_menu ul li a:hover::after {\n    width: 100%;\n}\n.desktop_menu ul li .active::after {\n\tcontent: '';\n    display: block;\n    width: 100%;\n    height: 2px;\n    background: white;\n} \n.mobile_menu {\n\tdisplay: none;\n}\n.open_button {\n\twidth: 60px;\n\theight: 60px;\n\ttext-align: center;\n\tfloat: right;\n\tpadding-right: 10px;\n}\n.open_button img {\n\tcursor: pointer;\n\theight: 30px;\n\twidth: 30px;\n\tmargin-top: 15px;\n}\n.open_header {\n\tdisplay: inline-block;\n\theight: 60px;\n\tline-height: 60px;\n\tfloat: right;\n}\n.navbar {\n\twidth: 80%;\n\tmargin: 0 auto;\n\tmax-width: 1400px;\n}\n.navbar .navbar_buttons {\n\tmargin: 0;\n\tpadding: 0;\n\tfloat: right;\n\tmargin-right: 20px;\n}\n.navbar .top_navbar_buttons {\n\tmargin: 0;\n\tpadding: 0;\n\tfloat: right;\n\tmargin-right: 8px;\n}\n.navbar .navbar_buttons li{\n\tlist-style-type: none;\n\tdisplay: inline-block;\n\tline-height: 60px;\n\tmargin-right: 5px; \n}\n.navbar .menu li{\n\tlist-style-type: none;\n\theight: 40px;\n\tline-height: 40px;\n\tpadding-left: 15px;\n\ttransition: .2s;\n}\n.navbar .menu li .menu_active {\n\tcolor: black;\n}\n.navbar .menu li a {\n\tcolor: black;\n\tfont-size: 20px;\n\ttext-decoration: none;\n\tcolor: grey;\n}\n.navbar .menu .hidden_button {\n\tdisplay: none;\n\tmargin: 10px 10px;\n\tpadding: 0;\n}\n.navbar .menu .hidden_button a {\n\twidth: 100%;\n\tmargin: 0 auto;\n\tcolor: white;\n\theight: 40px;\n\tline-height: 40px;\n}\n.menu {\n\tbackground-color: white;\n\ttop: 60px;\n\tright: -325px;\n\theight: 100vh;\n\twidth: 325px;\n\tposition: absolute;\n\tmargin: 0;\n\tpadding: 0;\n\ttransition: all .3s ease-in-out;\n\t-webkit-transform: translateX(-325px);\n\t        transform: translateX(-325px);\n}\n.hidden {\n\t-webkit-transform: translateX(0);\n\t        transform: translateX(0);\n}\n/******\n*******Grid******\n*******/\n@media screen and (max-width: 1200px) {\n\tsection, .top_menu, .navbar {\n\t\twidth: 100%;\n\t}\n}\n@media screen and (max-width: 980px) {\n\t.menu {\n\t\twidth: 315px;\n\t\tright: -315px;\n\t\t-webkit-transform: translateX(-315px);\n\t\t        transform: translateX(-315px);\n\t}\n\t.desktop_menu ul li a {\n\t\tfont-size: 18px;\n\t}\n\t.hidden {\n\t\t-webkit-transform: translateX(0);\n\t\t        transform: translateX(0);\n\t}\n\t.button {\n\t\tpadding: 0 10px;\n\t}\n}\n@media screen and (max-width: 780px) {   \n\t.desktop_menu {\n\t\tdisplay: none;\n\t}\n\t.dimmed {\n\t\tdisplay: block;\n\t}\n\t.mobile_menu {\n\t\tdisplay: block;\n\t}\n\tfooter .footer_info {\n\t\tdisplay: none;\n\t}\n}\n@media screen and (max-width: 560px) {\n\t.navbar_buttons {\n\t\tdisplay: none;\n\t}\n\t.navbar .menu .hidden_button {\n\t\tdisplay: block;\n\t}\n\t.menu {\n\t\ttop: 60px;\n\t\twidth: 250px;\n\t\tright: -250px;\n\t\t-webkit-transform: translateX(-250px);\n\t\t        transform: translateX(-250px);\n\t}\n\t.hidden {\n\t\t-webkit-transform: translateX(0);\n\t\t        transform: translateX(0);\n\t}\n}\n", ""]);
 
 	// exports
 
 
 /***/ }),
-/* 13 */
+/* 10 */
 /***/ (function(module, exports) {
 
 	/*
@@ -15014,7 +14943,7 @@
 
 
 /***/ }),
-/* 14 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -15236,7 +15165,361 @@
 
 
 /***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	// <template>
+	// 	<div class="dimm"></div>
+	// 	<nav class="fixed_menu">	
+	// 		<div class="navbar">
+	// 			<div class="desktop_menu">
+	// 				<ul>
+	// 					<li><a v-link="{ path: '/', exact: true }">Home</a></li>
+	// 					<li><a v-link="{ path: '/posts/categories' }">Categories</a></li>
+	// 					<li><a v-link="{ path: '/contacts' }">Contacts</a></li>
+	// 				</ul>
+	// 			</div>
+	// 			<div class="mobile_menu">
+	// 				<div class="open_button">
+	// 					<img src="../img/list-menu.png" alt="">
+	// 				</div>
+	// 				<div class="open_header">Меню</div>
+	// 				<ul class="menu hidden">
+	// 					<li><a v-link="{ path: '/' }" class="menu_active">Home</a></li>
+	// 					<li><a v-link="{ path: '/categories' }">Categories</a></li>
+	// 					<li><a v-link="{ path: '/contacts' }">Contacts</a></li>
+	// 					<li class="hidden_button"><a v-link="{ path: '/login' }" class="button">Login</a></li>
+	// 					<li class="hidden_button"><a v-link="{ path: '/signup' }" class="button yellow">Sign Up</a></li>
+	// 				</ul>
+	// 			</div>
+	// 			<ul class="navbar_buttons">
+	// 				<li>
+	// 					<a v-link="{ path: '/login' }" class="button white">Login</a>	
+	// 				</li>
+	// 				<li>
+	// 					<a v-link="{ path: '/signup' }" class="button yellow">Sign Up</a>
+	// 				</li>
+	// 			</ul>
+	// 		</div>
+	// 	</nav>
+	// 	<div class="grid-container">
+	// 		<div class="main-content">
+	// 			<router-view></router-view>	
+	// 		</div>
+	// 	</div>
+	// </template>
+	//
+	// <style>
+	// .main-content {
+	// 	width: 100%;
+	// 	min-height: 100vh;
+	// 	height: auto;
+	// 	background-color: #eeeeee;
+	// }
+	// /*******
+	// *******Navbar*******
+	// ******/
+	// nav {
+	// 	width: 100%;
+	// 	z-index: 5;
+	// }
+	// .fixed_menu {
+	// 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	// 	background-color: #47c9af;
+	// 	color: white;
+	// 	height: 60px;
+	// 	position: fixed;
+	// 	top: 0;
+	// 	transition: all .3s ease-out;
+	// 	transform: translateY(0);
+	// }
+	// .hidden_top {
+	// 	transform: translateY(-60px);
+	// }
+	// .desktop_menu {
+	// 	padding-left: 25px;
+	// }
+	// .desktop_menu ul {
+	// 	margin: 0;
+	// 	padding: 0;
+	// }
+	// .desktop_menu ul li {
+	// 	float: left;
+	// 	list-style-type: none;
+	// 	display: inline-block;
+	// 	margin-right: 18px; 
+	// 	margin-top: 18px;	
+	// }
+	// .desktop_menu ul li a {
+	// 	text-decoration: none;	
+	// 	color: white;
+	// 	font-size: 18px;
+	// }
+	// .desktop_menu ul li a::after {
+	//     content: '';
+	//     display: block;
+	//     width: 0;
+	//     height: 2px;
+	//     background: white;
+	//     transition: width .2s ease-out;
+	// }
+	// .desktop_menu ul li a:hover::after {
+	//     width: 100%;
+	// }
+	// .desktop_menu ul li .active::after {
+	// 	content: '';
+	//     display: block;
+	//     width: 100%;
+	//     height: 2px;
+	//     background: white;
+	// } 
+	// .mobile_menu {
+	// 	display: none;
+	// }
+	// .open_button {
+	// 	width: 60px;
+	// 	height: 60px;
+	// 	text-align: center;
+	// 	float: right;
+	// 	padding-right: 10px;
+	// }
+	// .open_button img {
+	// 	cursor: pointer;
+	// 	height: 30px;
+	// 	width: 30px;
+	// 	margin-top: 15px;
+	// }
+	// .open_header {
+	// 	display: inline-block;
+	// 	height: 60px;
+	// 	line-height: 60px;
+	// 	float: right;
+	// }
+	// .navbar {
+	// 	width: 80%;
+	// 	margin: 0 auto;
+	// 	max-width: 1400px;
+	// }
+	// .navbar .navbar_buttons {
+	// 	margin: 0;
+	// 	padding: 0;
+	// 	float: right;
+	// 	margin-right: 20px;
+	// }
+	// .navbar .top_navbar_buttons {
+	// 	margin: 0;
+	// 	padding: 0;
+	// 	float: right;
+	// 	margin-right: 8px;
+	// }
+	// .navbar .navbar_buttons li{
+	// 	list-style-type: none;
+	// 	display: inline-block;
+	// 	line-height: 60px;
+	// 	margin-right: 5px; 
+	// }
+	// .navbar .menu li{
+	// 	list-style-type: none;
+	// 	height: 40px;
+	// 	line-height: 40px;
+	// 	padding-left: 15px;
+	// 	transition: .2s;
+	// }
+	// .navbar .menu li .menu_active {
+	// 	color: black;
+	// }
+	// .navbar .menu li a {
+	// 	color: black;
+	// 	font-size: 20px;
+	// 	text-decoration: none;
+	// 	color: grey;
+	// }
+	// .navbar .menu .hidden_button {
+	// 	display: none;
+	// 	margin: 10px 10px;
+	// 	padding: 0;
+	// }
+	// .navbar .menu .hidden_button a {
+	// 	width: 100%;
+	// 	margin: 0 auto;
+	// 	color: white;
+	// 	height: 40px;
+	// 	line-height: 40px;
+	// }
+	// .menu {
+	// 	background-color: white;
+	// 	top: 60px;
+	// 	right: -325px;
+	// 	height: 100vh;
+	// 	width: 325px;
+	// 	position: absolute;
+	// 	margin: 0;
+	// 	padding: 0;
+	// 	transition: all .3s ease-in-out;
+	// 	transform: translateX(-325px);
+	// }
+	// .hidden {
+	// 	transform: translateX(0);
+	// }
+	// /******
+	// *******Grid******
+	// *******/
+	// @media screen and (max-width: 1200px) {
+	// 	section, .top_menu, .navbar {
+	// 		width: 100%;
+	// 	}
+	// }
+	// @media screen and (max-width: 980px) {
+	// 	.menu {
+	// 		width: 315px;
+	// 		right: -315px;
+	// 		transform: translateX(-315px);
+	// 	}
+	// 	.desktop_menu ul li a {
+	// 		font-size: 18px;
+	// 	}
+	// 	.hidden {
+	// 		transform: translateX(0);
+	// 	}
+	// 	.button {
+	// 		padding: 0 10px;
+	// 	}
+	// }
+	// @media screen and (max-width: 780px) {   
+	// 	.desktop_menu {
+	// 		display: none;
+	// 	}
+	// 	.dimmed {
+	// 		display: block;
+	// 	}
+	// 	.mobile_menu {
+	// 		display: block;
+	// 	}
+	// 	footer .footer_info {
+	// 		display: none;
+	// 	}
+	// }
+	// @media screen and (max-width: 560px) {
+	// 	.navbar_buttons {
+	// 		display: none;
+	// 	}
+	// 	.navbar .menu .hidden_button {
+	// 		display: block;
+	// 	}
+	// 	.menu {
+	// 		top: 60px;
+	// 		width: 250px;
+	// 		right: -250px;
+	// 		transform: translateX(-250px);
+	// 	}
+	// 	.hidden {
+	// 		transform: translateX(0);
+	// 	}
+	// }
+	// </style>
+	//
+	// <script>
+	exports.default = {
+		data: function data() {
+			return {};
+		},
+		methods: {}
+	};
+	// </script>
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = "\n<div class=\"dimm\"></div>\n<nav class=\"fixed_menu\">\t\n\t<div class=\"navbar\">\n\t\t<div class=\"desktop_menu\">\n\t\t\t<ul>\n\t\t\t\t<li><a v-link=\"{ path: '/', exact: true }\">Home</a></li>\n\t\t\t\t<li><a v-link=\"{ path: '/posts/categories' }\">Categories</a></li>\n\t\t\t\t<li><a v-link=\"{ path: '/contacts' }\">Contacts</a></li>\n\t\t\t</ul>\n\t\t</div>\n\t\t<div class=\"mobile_menu\">\n\t\t\t<div class=\"open_button\">\n\t\t\t\t<img src=\"" + __webpack_require__(14) + "\" alt=\"\">\n\t\t\t</div>\n\t\t\t<div class=\"open_header\">Меню</div>\n\t\t\t<ul class=\"menu hidden\">\n\t\t\t\t<li><a v-link=\"{ path: '/' }\" class=\"menu_active\">Home</a></li>\n\t\t\t\t<li><a v-link=\"{ path: '/categories' }\">Categories</a></li>\n\t\t\t\t<li><a v-link=\"{ path: '/contacts' }\">Contacts</a></li>\n\t\t\t\t<li class=\"hidden_button\"><a v-link=\"{ path: '/login' }\" class=\"button\">Login</a></li>\n\t\t\t\t<li class=\"hidden_button\"><a v-link=\"{ path: '/signup' }\" class=\"button yellow\">Sign Up</a></li>\n\t\t\t</ul>\n\t\t</div>\n\t\t<ul class=\"navbar_buttons\">\n\t\t\t<li>\n\t\t\t\t<a v-link=\"{ path: '/login' }\" class=\"button white\">Login</a>\t\n\t\t\t</li>\n\t\t\t<li>\n\t\t\t\t<a v-link=\"{ path: '/signup' }\" class=\"button yellow\">Sign Up</a>\n\t\t\t</li>\n\t\t</ul>\n\t</div>\n</nav>\n<div class=\"grid-container\">\n\t<div class=\"main-content\">\n\t\t<router-view></router-view>\t\n\t</div>\n</div>\n";
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "5658d5d44537fcea581563385b9806e7.png";
+
+/***/ }),
 /* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__webpack_require__(16)
+	__vue_script__ = __webpack_require__(18)
+	if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
+	  console.warn("[vue-loader] public/components/Home.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(19)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-3d1f951e/Home.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(17);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(11)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Home.vue", function() {
+				var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Home.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(10)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\np {\n\tcolor: black;\n}\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 18 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -15302,21 +15585,21 @@
 	// </script>
 
 /***/ }),
-/* 16 */
+/* 19 */
 /***/ (function(module, exports) {
 
 	module.exports = "\n<section>\n\t<h1>Home page</h1>\n\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus beatae repellat nulla tenetur delectus voluptate enim magnam, dolore quae culpa sed suscipit, consectetur architecto molestias praesentium similique molestiae sapiente laudantium.</p>\n\t<hr>\n\t<p>data: {{ data }}</p>\t\n\t<br>\n\t<hr>\n\t<input type=\"text\" v-model=\"info\">\n\t<button class=\"button\" v-on:click=\"sendData\">Send</button>\t\n</section>\n";
 
 /***/ }),
-/* 17 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__vue_script__ = __webpack_require__(18)
+	__vue_script__ = __webpack_require__(21)
 	if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
 	  console.warn("[vue-loader] public/components/Posts.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(19)
+	__vue_template__ = __webpack_require__(22)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -15341,7 +15624,7 @@
 	})()}
 
 /***/ }),
-/* 18 */
+/* 21 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -15366,7 +15649,7 @@
 	// </script>
 
 /***/ }),
-/* 19 */
+/* 22 */
 /***/ (function(module, exports) {
 
 	module.exports = "\n<section>\n\t<h1>Posts</h1>\t\t\n</section>\n";

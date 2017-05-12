@@ -1,0 +1,60 @@
+/******
+*******Grid******
+*******/
+@media screen and (max-width: 1200px) {
+	section, .top_menu, .navbar {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 980px) {
+	.menu {
+		width: 315px;
+		right: -315px;
+		transform: translateX(-315px);
+	}
+	.desktop_menu ul li a {
+		font-size: 18px;
+	}
+	.hidden {
+		transform: translateX(0);
+	}
+	.button {
+		padding: 0 10px;
+	}
+}
+@media screen and (max-width: 780px) {   
+	.desktop_menu {
+		display: none;
+	}
+	.dimmed {
+		display: block;
+	}
+	.mobile_menu {
+		display: block;
+	}
+	footer .footer_info {
+		display: none;
+	}
+}
+@media screen and (max-width: 560px) {
+	.navbar_buttons {
+		display: none;
+	}
+	.navbar .menu .hidden_button {
+		display: block;
+	}
+	.menu {
+		top: 60px;
+		width: 250px;
+		right: -250px;
+		transform: translateX(-250px);
+	}
+	.hidden {
+		transform: translateX(0);
+	}
+}
+
+
+
+
+

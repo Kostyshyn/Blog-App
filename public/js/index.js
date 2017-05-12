@@ -20,7 +20,7 @@ router.map({
 	'/': {
 		component: Home
 	},
-	'/posts': {
+	'/categories': {
 		component: Posts
 	}
 });

@@ -13,7 +13,8 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.vue$/, loader: 'vue' },
-            { test: /\.js$/, loader: 'babel', exclude: /node_modules/ }
+            { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
+            { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'file-loader' }
         ]
     },
     babel: {
