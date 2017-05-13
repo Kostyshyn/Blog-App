@@ -1,16 +1,18 @@
 <template>
-	<div class="grid-row">
-		<div class="col-12">
-			<div class="main-page-header box">
-				<h1>Blog</h1>
+	<section>
+		<div class="grid-row">
+			<div class="col-12">
+				<div class="main-page-header box">
+					<h1>Blog</h1>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="posts-preview">
-		<div class="grid-row" v-if="posts" v-for="row in posts | chunk 3">
-			<post-preview :post="post" v-for="post in row"></post-preview>
+		<div class="posts-preview">
+			<div class="grid-row" v-if="posts" v-for="row in posts | chunk 3">
+				<post-preview :post="post" v-for="post in row"></post-preview>
+			</div>
 		</div>
-	</div>
+	</section>
 </template>
 
 <style>

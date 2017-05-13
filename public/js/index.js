@@ -6,6 +6,7 @@ import VueResource from 'vue-resource'
 import Main from '../components/Main.vue'
 import Home from '../components/Home.vue'
 import Posts from '../components/Posts.vue'
+import Post from '../components/Post.vue'
 import Login from '../components/Login.vue'
 import Signup from '../components/Signup.vue'
 
@@ -42,6 +43,11 @@ router.map({
 	'/signup': {
 		component: Signup
 	},
+	'/posts/:href': {
+		name: 'post',
+		component: Post,
+		props: true
+	}
 });
 
 // router.redirect({
