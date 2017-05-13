@@ -27,6 +27,15 @@ Vue.filter('moment', function(date){
 const router = new VueRouter({
 	mode: 'history',
 	linkActiveClass: 'active',
+	scrollBehavior(to, from, savedPosition){
+		if (savedPosition){
+			return savedPosition;
+		} else if (to.hash){ 
+			return { selector: to.hash };
+		} else {
+			return { x: 0, y: 0 };
+		}
+	},
 	routes: [
 		{
 			path: '/',
@@ -43,6 +52,10 @@ const router = new VueRouter({
 		{
 			path: '/posts',
 			component: Posts
+		},
+		{
+			path: '/posts/postid',
+			component: Post
 		}
 	]
 });

@@ -4,7 +4,9 @@
 		<navbar></navbar>
 		<div class="grid-container">
 			<div class="main-content">
-				<router-view></router-view>
+				<transition name="component-fade" mode="out-in">	
+					<router-view></router-view>
+				</transition>
 			</div>
 			<blog-footer></blog-footer>
 		</div>

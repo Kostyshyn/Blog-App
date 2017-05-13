@@ -7,6 +7,7 @@
 				</div>
 			</div>
 		</div>	
+		<post-preview></post-preview>
 	</section>
 </template>
 
@@ -16,7 +17,10 @@
 
 <script>
 
+import PostPreview from './PostPreview.vue'
+
 export default {
+	components: { PostPreview },
 	data: function(){
 		return {
 

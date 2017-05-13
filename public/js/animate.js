@@ -13,10 +13,16 @@ openButton.addEventListener('click', function(){
 
 });
 
+dimmed.addEventListener('click', function(){
+	hiddenMenu.classList.toggle('hidden');
+	dimmed.classList.toggle('dimmed');
+
+});
+
 mobileMenuLinks.forEach(function(l){
 	l.addEventListener('click', function(){
 		hiddenMenu.classList.toggle('hidden');
 		dimmed.classList.toggle('dimmed');
-		window.scrollTo(0, 0);
+		// window.scrollTo(0, 0);
 	});
 });
