@@ -11,14 +11,29 @@ module.exports = {
         filename: 'build.js'
     },
     module: {
-        loaders: [
-            { test: /\.vue$/, loader: 'vue' },
-            { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
-            { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'file-loader' }
+        rules: [
+            { 
+                test: /\.vue$/, 
+                loader: 'vue-loader' 
+            },
+            { 
+                test: /\.js$/, 
+                loader: 'babel-loader', 
+                exclude: /node_modules/, 
+                options: {
+                    presets: ['es2015'],
+                    plugins: ['transform-runtime']
+                } 
+            },
+            { 
+                test: /\.(jpe?g|png|gif|svg)$/i, 
+                loader: 'file-loader' 
+            }
         ]
     },
-    babel: {
-        presets: ['es2015'],
-        plugins: ['transform-runtime']
+    resolve: {
+        alias: {
+            vue$: 'vue/dist/vue.js'
+        }
     }
 };
