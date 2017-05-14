@@ -94,7 +94,6 @@
 	display: inline-block;
 	height: 40px;
 	width: 40px;
-	background-image: url('../img/user.png');
 	background-position: center;
 	background-size: cover;
 	background-color: grey;
@@ -113,6 +112,7 @@
 	padding: 15px 0px;
 	border-bottom: 2px solid #cac9cd;
 	line-height: 22px;
+	color: #333;
 }
 .post-preview-controll {
 	padding-top: 15px;
@@ -165,6 +165,7 @@
 	border-radius: 4px;
 	/*background-color: #1abc9c;*/
 	background-color: #ff5722;
+	margin-right: 5px;
 }
 .tag a {
 	color: inherit;
@@ -221,7 +222,6 @@
 	display: inline-block;
 	height: 40px;
 	width: 40px;
-	background-image: url('../img/user.png');
 	background-position: center;
 	background-size: cover;
 	background-color: grey;
@@ -238,6 +238,7 @@
 	padding: 30px 0px;
 	border-bottom: 2px solid #cac9cd;	
 	line-height: 22px;
+	color: #333;
 }
 .main-post-controll {
 	padding-top: 10px;
@@ -250,7 +251,7 @@
 }
 
 .component-fade-enter-active, .component-fade-leave-active {
-	transition: opacity .3s ease;
+	transition: opacity .2s ease;
 }
 .component-fade-enter, .component-fade-leave-to {
 	opacity: 0;

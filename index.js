@@ -55,6 +55,10 @@ db.once('connected', function(){
 
 app.use('/api', api);
 
+app.use('*', function(req, res, next){
+	res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
 // Error handling
 
 app.use(function(req, res, next){

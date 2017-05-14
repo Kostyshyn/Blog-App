@@ -1,5 +1,5 @@
 <template>
-	<div class="post-wrap">
+	<div class="post-wrap" v-if="post">
 		<section>
 			<div class="grid-row">
 				<div class="col-12">
@@ -8,33 +8,30 @@
 							<div class="main-post-info">
 								<div class="main-post-author">
 									<a href="">
-										<div class="main-post-author-avatar">
+										<div class="main-post-author-avatar" v-bind:style="{ 'background-image': 'url(../img/' + post.author.profile_img + ');' }">
 										</div>
 										<div class="main-post-author-name">
-											Kostyhyn
+											{{ post.author.username }}
 										</div>
 									</a>
 								</div>
 								<div class="main-post-date">
-									<p><span class="icon calendar"></span>7.05.2017</p>
+									<p><span class="icon calendar"></span>
+										{{ post.date | formatDate }}
+									</p>
 								</div>
 							</div>
-							<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error sunt corporis voluptas labore!</h1>
+							<h1>{{ post.title }}</h1>
 							<div class="post-tags">
-								<span class="tag">
-									<a href="">
-										vue
-									</a>
-								</span>
-								<span class="tag">
-									<a href="">
-										nodejs
-									</a>
+								<span class="tag" v-for="tag in post.tags">
+									<router-link :to="{ name: 'categories', params: { tag: tag } }" tag="a" exact >
+										{{ tag }}
+									</router-link>
 								</span>
 							</div>
 						</div>
 						<div class="main-post-text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum ducimus praesentium, qui vitae officiis excepturi assumenda ratione voluptatibus iure nobis eveniet eum officia dolorem eligendi perferendis expedita, aut, non maxime. Provident iste non, corporis consequatur quia harum distinctio perferendis! Quas consequatur expedita, assumenda nesciunt sequi omnis commodi repellendus nulla nostrum, ut ratione sapiente minima. Eaque assumenda impedit nulla earum suscipit, rerum consequuntur totam veritatis quod expedita perferendis, laudantium quae quis dolores illum? Asperiores, cupiditate consequuntur libero minima. Illum ea excepturi qui eius delectus esse! Nulla, et doloremque placeat ab quos! Provident, omnis consequatur eveniet facere quod, odit suscipit nihil eius.</p>
+							<p>{{ post.text }}</p>
 						</div>
 						<div class="main-post-controll">
 
@@ -51,15 +48,36 @@
 </style>
 
 <script>
+
+import moment from '../bower/moment/min/moment-with-locales.min.js'
+
 export default {
 	name: 'post',
+	props: ['href'],
 	data: function(){
 		return {
-
+			post: null
+		}
+	},
+	filters: {
+		formatDate: function(date){
+			return moment(date).format('ll');
 		}
 	},
 	methods: {
-		
+		getPost: function(){
+			this.$http.get('/api/posts/' + this.href).then(function(response){
+			    // success callback
+			    this.post = response.data.data;
+			}, function(response){
+			    // error callback
+			    console.log('error:', response);
+			});
+		}
+
+	},
+	created: function(){
+		this.getPost();
 	}
 }
 </script>

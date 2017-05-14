@@ -13,27 +13,22 @@ import Signup from '../components/Signup.vue'
 Vue.use(VueResource);
 Vue.use(VueRouter);
 
-import _ from '../bower/lodash/dist/lodash.min.js'
-import moment from '../bower/moment/min/moment-with-locales.min.js'
-
-Vue.filter('chunk', function(value, size){
-	return _.chunk(value, size);
-});
-
-Vue.filter('moment', function(date){
-	return moment(date).format('ll');
-});
-
 const router = new VueRouter({
 	mode: 'history',
 	linkActiveClass: 'active',
 	scrollBehavior(to, from, savedPosition){
 		if (savedPosition){
-			return savedPosition;
+			setTimeout(() => {
+				window.scrollTo(savedPosition.x, savedPosition.y);
+			}, 200);
 		} else if (to.hash){ 
-			return { selector: to.hash };
+			setTimeout(() => {
+				window.scrollTo(0, to.hash.offsetTop);
+			}, 200);
 		} else {
-			return { x: 0, y: 0 };
+			setTimeout(() => {
+				window.scrollTo(0, 0);
+			}, 200);
 		}
 	},
 	routes: [
@@ -54,9 +49,17 @@ const router = new VueRouter({
 			component: Posts
 		},
 		{
-			path: '/posts/postid',
-			component: Post
-		}
+			name: 'post',
+			path: '/posts/:href',
+			component: Post,
+			props: true
+		},
+		{
+			name: 'categories',
+			path: '/posts/categories/:tag',
+			component: Posts,
+			props: true
+		},
 	]
 });
 
