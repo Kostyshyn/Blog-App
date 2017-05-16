@@ -14,7 +14,7 @@ hr {
 	border-top: 1px solid #1ca7ea;
 }
 section {
-	padding: 20px;
+	padding: 0px 20px;
 	width: 80%;
 	margin: 0 auto;
 	max-width: 1400px;
@@ -75,7 +75,7 @@ section {
 	background-image: url('../img/calendar-grey.png');
 }
 .like {
-	background-image: url('../img/like.png')
+	background-image: url('../img/like-disabled.png')
 }
 .bookmark {
 	background-image: url('../img/bookmark-white.png')

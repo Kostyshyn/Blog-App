@@ -11,6 +11,7 @@
 	margin: 5px 0px;
 }
 .main-page-header {
+	margin-top: 10px;
 	width: 100%;
 	height: 200px;
 	padding: 10px; 
@@ -51,17 +52,11 @@
 }
 .post-bookmark {
 	position: absolute;
-	right: 0px;
-	top: 0px;
-	height: 25px;
-	display: none;
+	left: 0px;
+	top: 15px;
 }
 .post-bookmark a {
 	display: inline-block;
- 	height: 25px;
-}
-.post-bookmark span {
-	margin-right: 0px;
 }
 .post-info {
 	width: 100%;
@@ -70,8 +65,8 @@
 	margin-bottom: 10px;
 }
 .post-date, .post-author {
-	padding: 10px 0px;
-	width: 49%;
+	padding-top: 10px;
+	width: auto;
 	display: inline-block;
 }
 .post-author {
@@ -96,17 +91,28 @@
 	width: 40px;
 	background-position: center;
 	background-size: cover;
-	background-color: grey;
+	background-color: #ffd232;
 	border-radius: 50%;
 	position: absolute;
 }
 .post-date {
 	color: grey;
-	text-align: right;
+	font-size: 14px;
+	position: absolute;
+	right: 0px;
+	top: -4px;
 }
 .post-date span {
 	/*margin-bottom: -5px;*/
 	/*display: none;*/
+}
+.post-bookmark {
+	position: absolute;
+	left: 0px;
+	top: 15px;
+}
+.post-bookmark a {
+	display: inline-block;
 }
 .post-preview-text {
 	padding: 15px 0px;
@@ -121,6 +127,7 @@
 .post-like, .post-comment-icon, .comment-icon-count, .like-count {
 	height: 25px;
 	display: inline-block;
+	color: grey;
 }
 .post-comment-icon { 
 	margin-right: 20px;
@@ -128,9 +135,19 @@
 .post-like {
 
 }
+.like, .comment-icon {
+	opacity: .5;
+	transition: all .2s ease-in-out;
+}
+.post-like:hover .like {
+	opacity: 1;
+}
+.post-comment-icon:hover .comment-icon {
+	opacity: 1;
+}
 .post-comment-icon span { 
 	height: 25px;
-	margin-bottom: -10px;
+	margin-bottom: -8px;
 }
 .post-comment-icon a {
 	display: inline-block;
@@ -144,6 +161,7 @@
 	margin-bottom: -7px;
 }
 .post-like a {
+	text-decoration: none;
 	display: inline-block;
 	height: 25px;
 }
@@ -155,17 +173,19 @@
 	padding: 10px 0px 20px 0px;
 }
 .tag {
+	font-size: 16px;
 	display: inline-block;
-	min-width: 60px;
+	min-width: 50px;
 	padding: 0px 10px;
-	height: 30px;
+	height: 24px;
 	text-align: center;
-	line-height: 30px;
+	line-height: 24px;
 	color: white;
 	border-radius: 4px;
-	/*background-color: #1abc9c;*/
-	background-color: #ff5722;
 	margin-right: 5px;
+	/*background-color: #1abc9c;*/
+	/*background-color: #1ca7ea;*/
+	background-color: #ff5722;
 }
 .tag a {
 	color: inherit;
@@ -190,19 +210,18 @@
 }
 .post-header h1 {
 	padding-top: 20px;
-	font-size: 2em;
+	font-size: 2.3em;
 	color: grey;
 }
 .post-tags {
 	width: 100%;
 	padding-top: 10px;
-	/*display: none;*/
 }
 .main-post-info {
 	text-align: left;
 }
 .main-post-date, .main-post-author {
-	width: 130px;
+	width: auto;
 	display: inline-block;
 }
 .main-post-date {
@@ -214,6 +233,7 @@
 	text-decoration: none;
 	height: 40px;
 	display: inline-block;
+	padding-right: 20px;
 }
 .main-post-author a:hover .main-post-author-name {
 	text-decoration: underline;
@@ -224,7 +244,7 @@
 	width: 40px;
 	background-position: center;
 	background-size: cover;
-	background-color: grey;
+	background-color: #ffd232;
 	border-radius: 50%;
 	position: absolute;
 }
@@ -234,6 +254,10 @@
 	line-height: 40px;
 	margin-left: 45px; 	
 }
+.author-info {
+	padding-top: 10px;
+	color: #b5b4b8;
+}
 .main-post-text {
 	padding: 30px 0px;
 	border-bottom: 2px solid #cac9cd;	
@@ -241,13 +265,84 @@
 	color: #333;
 }
 .main-post-controll {
-	padding-top: 10px;
+	position: relative;
+	padding-top: 20px;
+}
+.main-post-controll .post-like {
+	margin-left: 190px;
 }
 
 /*comments*/
 
+.comment-form {
+	padding: 20px;
+	margin-top: 10px;
+	display: none;
+}
+.comment-form textarea {
+	width: 100%;
+	border-radius: 4px;
+	padding: 15px;
+	outline: none;
+	height: 100px;
+}
+.comment-form .button {
+	margin-top: 15px;
+}
+.comment-form h3 {
+	color: grey;
+	margin-bottom: 15px;
+}
 .comment {
 	padding: 20px;
+}
+.comment-info {
+	text-align: left;
+	border-bottom: 2px solid #cac9cd;
+	padding-bottom: 15px;
+	position: relative;
+	text-align: left;
+}
+.comment-date, .comment-author {
+	padding-top: 10px;
+	width: auto;
+	display: inline-block;
+}
+.comment-author {
+	margin-top: -15px;
+}
+.comment-author a {
+	display: inline-block;
+	color: #1ca7ea;
+	padding-right: 20px;
+}
+.comment-author a:hover .comment-author-name {
+	text-decoration: underline;
+}
+.comment-author-name {
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	margin-left: 45px; 	
+}
+.comment-author-avatar {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-position: center;
+	background-size: cover;
+	background-color: #ffd232;
+	border-radius: 50%;
+	position: absolute;
+}
+.comment-date {
+	color: grey;
+	font-size: 14px;
+	text-align: right;
+}
+.comment-text {
+	padding-top: 12px;
+	color: #333;
 }
 
 .component-fade-enter-active, .component-fade-leave-active {

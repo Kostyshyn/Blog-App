@@ -41,12 +41,21 @@
 	  	padding: 10px 0px;
 	}
 	section {
-		padding: 10px;
+		padding: 0px 10px;
 		width: 100%;
 	}
 	.col-4 { width: 100%; }
-	.main-post-date, .main-post-author {
-		width: 49%;
+	.main-post-author, .comment-author {
+		width: 39%;
+	}
+	.main-post-date, .comment-date {
+		width: 59%;
+	}
+	.main-post-controll {
+		text-align: right;
+	}
+	.comment-form .button {
+		width: 100%;
 	}
 	.navbar_buttons {
 		display: none;
