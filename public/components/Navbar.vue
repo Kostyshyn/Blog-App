@@ -17,11 +17,21 @@
 					<li><router-link to="/" tag="a" exact >Home</router-link></li>
 					<li><router-link to="/posts" tag="a">Posts</router-link></li>
 					<li><router-link to="/contacts" tag="a">Contacts</router-link></li>
-					<li class="hidden_button"><router-link to="/login" tag="a" class="button">Login</router-link></li>
-					<li class="hidden_button"><router-link to="/signup" tag="a" class="button yellow">Sign Up</router-link></li>
+					<li class="hidden_button" v-if="user">
+						<router-link to="/profile" tag="a" class="button success">Profile</router-link>	
+					</li>
+					<li class="hidden_button" v-else-if="!isAuth">
+						<router-link to="/login" tag="a" class="button">Login</router-link>
+						<router-link to="/signup" tag="a" class="button yellow">Sign Up</router-link>
+					</li>	
 				</ul>
 			</div>
-			<ul class="navbar_buttons">
+			<ul class="navbar_buttons" v-if="user">
+				<li>
+					<router-link to="/profile" tag="a" class="button white">Profile</router-link>	
+				</li>
+			</ul>
+			<ul class="navbar_buttons" v-else-if="!isAuth">
 				<li>
 					<router-link to="/login" tag="a" class="button white">Login</router-link>	
 				</li>
@@ -37,6 +47,7 @@
 <script>
 export default {
 	name: 'navbar',
+	props: ['user', 'isAuth'],
 	data: function(){
 		return {}
 	},

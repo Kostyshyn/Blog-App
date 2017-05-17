@@ -34,9 +34,18 @@ router.get('/logout', isAuth, authController.logout);
 
 router.get('/user', function(req, res, next){
 	if (req.user){
-		res.json(req.user.username);
+		var user = {
+			username: req.user.username,
+			profile_img: req.user.profile_img,
+			id: req.user.id,
+			href: req.user.href,
+		};
+		res.status(200);
+		res.json({ user: user });
 	} else {
-		res.json('No user');
+		res.json({
+			user: null
+		});
 	}
 });
 

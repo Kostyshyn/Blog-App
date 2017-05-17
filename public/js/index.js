@@ -75,6 +75,13 @@ const router = new VueRouter({
 	]
 });
 
+export var Event = new Vue({});
+
+router.beforeEach(function(to, from, next){
+	Event.$emit('changeState')
+	next();
+});
+
 const app = new Vue({
 	el: '#app',
 	router,

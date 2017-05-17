@@ -256,7 +256,8 @@ nav {
 	list-style-type: none;
 	display: inline-block;
 	line-height: 60px;
-	margin-right: 5px; 
+	margin-right: 5px;
+	margin-bottom: 5px; 
 }
 .navbar .menu li{
 	list-style-type: none;
