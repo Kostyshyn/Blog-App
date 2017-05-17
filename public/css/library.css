@@ -75,7 +75,10 @@ section {
 	background-image: url('../img/calendar-grey.png');
 }
 .like {
-	background-image: url('../img/like-disabled.png')
+	background-image: url('../img/like.png')
+}
+.like-disabled {
+	background-image: url('../img/like-disabled.png');
 }
 .bookmark {
 	background-image: url('../img/bookmark-white.png')

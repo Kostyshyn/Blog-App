@@ -1,6 +1,6 @@
 <template>
-	<div>
-		<div class="post-wrap" v-if="post">
+	<div v-if="post">
+		<div class="post-wrap">
 			<section>
 				<div class="grid-row">
 					<div class="col-12">
@@ -44,12 +44,10 @@
 									</a>
 								</div>
 								<div class="post-like">
-									<a href="">
-										<span class="icon like big_icon"></span>
-										<div class="like-count">
-											13
-										</div>
-									</a>
+									<span class="icon like big_icon"></span>
+									<div class="like-count">
+										13
+									</div>
 								</div>
 							</div>
 						</div>

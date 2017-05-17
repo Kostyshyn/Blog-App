@@ -24,7 +24,6 @@ router.post('/posts', isAuth, postController.addPost);
 router.delete('/posts/:href', isAuth, postController.deletePost);
 router.put('/posts/:href', isAuth, postController.updatePost);
 
-
 // User routes
 
 router.post('/login', authController.login);

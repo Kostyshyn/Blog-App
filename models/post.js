@@ -221,6 +221,7 @@ module.exports.like = function(href, user){
 					if (err){
 						reject(err);
 					} else {
+						// add checking for post
 						var query = {
 							author: user.id,
 							post: post.id

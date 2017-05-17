@@ -48,13 +48,11 @@
 											</div>
 										</a>
 									</div>
-									<div class="post-like">
-										<a href="">
-											<span class="icon like big_icon"></span>
-											<div class="like-count">
-												{{ post.likes.length }}
-											</div>
-										</a>
+									<div class="post-like" v-on:click="like(post)">
+										<span class="icon like big_icon" v-bind:class=""></span>
+										<div class="like-count">
+											{{ post.likes.length }}
+										</div>
 									</div>
 								</div>	
 							</div>
@@ -95,6 +93,17 @@ export default {
 			this.$http.get('/api/posts').then(function(response){
 			    // success callback
 			    this.posts = response.data.data;
+			}, function(response){
+			    // error callback
+			    console.log('error:', response);
+			});
+		},
+		like: function(post){
+			var post = post;
+			this.$http.get('/api/posts/' + post.href + '/like').then(function(response){
+			    // success callback
+			    console.log(response.data.data.likes.length);
+			    post.likes = response.data.data.likes;
 			}, function(response){
 			    // error callback
 			    console.log('error:', response);

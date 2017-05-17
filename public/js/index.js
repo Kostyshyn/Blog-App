@@ -9,6 +9,8 @@ import Post from '../components/Post.vue'
 import Posts from '../components/Posts.vue'
 import Login from '../components/Login.vue'
 import Signup from '../components/Signup.vue'
+import Profile from '../components/Profile.vue'
+import CreatePost from '../components/CreatePost.vue'
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
@@ -60,6 +62,16 @@ const router = new VueRouter({
 			component: Posts,
 			props: true
 		},
+		{
+			name: 'profile',
+			path: '/profile',
+			component: Profile
+		},
+		{
+			name: 'create-post',
+			path: '/create-post',
+			component: CreatePost
+		}
 	]
 });
 

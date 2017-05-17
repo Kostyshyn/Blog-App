@@ -57,6 +57,12 @@
 	.comment-form .button {
 		width: 100%;
 	}
+	.login-form {
+		width: 100%;
+	}
+	.login-form .button, .signup-form .button, .signup-form form {
+		width: 100%;
+	}
 	.navbar_buttons {
 		display: none;
 	}

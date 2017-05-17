@@ -44,7 +44,7 @@ exports.addPost = function(req, res, next){
 		date: Date.now()
 	};
 	Post.addPost(post, currentUser).then(function(post){
-		var loc = 'api/posts/' + post.href;
+		var loc = '/posts/' + post.href;
 		res.status(201);
 		res.location(loc);
 		res.json({
