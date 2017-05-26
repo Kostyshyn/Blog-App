@@ -41,12 +41,12 @@
 								</div>
 								<div class="post-preview-controll">
 									<div class="post-comment-icon">
-										<a href="">
+										<router-link to="/posts" tag="a">
 											<span class="icon comment-icon big_icon"></span>
 											<div class="comment-icon-count">
 												{{ post.comments.length }}
 											</div>
-										</a>
+										</router-link>
 									</div>
 									<div class="post-like" v-on:click="like(post)">
 										<span class="icon like big_icon" v-bind:class=""></span>

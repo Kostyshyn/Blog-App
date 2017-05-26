@@ -39,7 +39,7 @@ export default {
 
 			console.log('info:', this.info);
 
-			this.$router.replace('/');
+			this.$router.replace('/profile');
 
 			}, function(response){
 			    // error callback

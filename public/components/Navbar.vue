@@ -12,7 +12,7 @@
 				<div class="open_button">
 					<img src="img/list-menu.png" alt="">
 				</div>
-				<div class="open_header">Меню</div>
+				<div class="open_header">Menu</div>
 				<ul class="menu hidden">
 					<li><router-link to="/" tag="a" exact >Home</router-link></li>
 					<li><router-link to="/posts" tag="a">Posts</router-link></li>
@@ -45,13 +45,23 @@
 
 
 <script>
+
+import auth from '../js/auth.js'
+import { Event } from '../js/index.js'
+
 export default {
 	name: 'navbar',
 	props: ['user', 'isAuth'],
 	data: function(){
-		return {}
+		return {
+
+		}
 	},
 	methods: {
+
+	},
+	created: function(){
+
 	}
 }
 </script>

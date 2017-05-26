@@ -1,5 +1,6 @@
 .main-content {
 	width: 100%;
+	padding: 20px 0px;
 	min-height: 100vh;
 	height: auto;
 	background-color: #eeeeee;
@@ -428,10 +429,44 @@
 	outline: none;
 	height: 500px;
 	margin-bottom: 20px;
+	padding: 20px;
+	font-size: 20px;
 }
 .create-post .post-creating-error {
 	color: red;
 	margin-top: 30px;
+}
+/*profile*/
+
+.profile {
+	
+}
+.profile h2 {
+	color: grey;
+}
+.profile-header {
+	
+}
+.profile-avatar {
+	padding: 20px;
+	min-height: 150px;
+	height: auto;
+}
+.profile-info {
+	padding: 20px;
+	min-height: 150px;
+	height: auto;
+}
+.profile-controll {
+	height: auto;
+	padding: 20px;
+}
+.profile-controll-button {
+	margin-right: 10px;
+}
+.profile-content {
+	padding: 20px;
+	height: auto;
 }
 
 /*transition*/

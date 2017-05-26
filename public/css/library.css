@@ -26,7 +26,7 @@ section {
 }
 [class*='col-'] {
   	float: left;
-  	padding: 10px 5px;
+  	padding: 5px 5px;
 }
 .col-1  { width: 8.33%;  } 
 .col-2  { width: 16.66%; }
@@ -100,6 +100,7 @@ section {
 	cursor: pointer;
 	font-size: 16px;
 	border: none;
+	/*color: grey;*/
 	color: white;
 	background-color: #cac9cd;
 	height: 34px;
@@ -122,24 +123,28 @@ section {
 	padding: 0 20px;
 }
 .primary {
+	color: white;
 	background-color: #1ca7ea;
 }
 .primary:hover {
 	background-color: #1996d2;
 }
 .success {
+	color: white;
 	background-color: #1abc9c;
 }
 .success:hover {
 	background-color: #14967c;
 }
 .yellow {
+	color: white;
 	background-color: #ffd232;
 }
 .yellow:hover {
 	background-color: #ffc700;
 }
 .red {
+	color: white;
 	background-color: #ff6464;
 }
 .red:hover {
@@ -149,6 +154,7 @@ section {
 	background-color: transparent;
 	border: 2px solid white;
 	/*font-weight: normal;*/
+	color: white;
 	line-height: 30px;
 }
 .white:hover {
@@ -286,6 +292,7 @@ nav {
 	color: white;
 	height: 40px;
 	line-height: 40px;
+	margin-bottom: 10px;
 }
 .menu {
 	background-color: white;

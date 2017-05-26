@@ -46,8 +46,8 @@ export default {
 				}
 			}, function(response){
 					// error callback
-				console.log('error:', response.body.message);
-				this.error = response.body.message;
+				console.log('error:', response.data.message);
+				this.error = response.data.message;
 			});
 		}
 	},

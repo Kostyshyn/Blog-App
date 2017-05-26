@@ -1,6 +1,12 @@
 <template>
 	<section>
-		<h1>Posts</h1>		
+		<div class="grid-row">
+				<div class="col-12">
+					<div class="posts-managing box">
+						Posts categories
+					</div>
+				</div>
+			</div>	
 	</section>
 </template>
 

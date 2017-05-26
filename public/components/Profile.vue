@@ -1,8 +1,41 @@
 <template>
-	<div class="profile box">
-		<router-link to="/create-post" tag="a" class="button">Create post</router-link>
-		<button class="button" v-on:click="logout">Logout</button>
-	</div>
+	<section>
+		<div class="profile">
+			<div class="grid-row">
+				<div class="col-4">
+					<div class="profile-avatar box">
+						<h2>
+							Avatar
+						</h2>
+					</div>
+				</div>
+				<div class="col-8">
+					<div class="profile-info box">
+						<h2>
+							Info
+						</h2>
+					</div>					
+				</div>
+			</div>
+			<div class="grid-row">
+				<div class="col-12">
+					<div class="profile-controll box">
+						<router-link to="/posts/create" tag="a" class="button profile-controll-button">Create post</router-link>
+						<button class="button profile-controll-button" v-on:click="logout">Logout</button>
+					</div>
+				</div>
+			</div>
+			<div class="grid-row">
+				<div class="col-12">
+					<div class="profile-content box">
+						<h2>
+							Content
+						</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </template>
 
 

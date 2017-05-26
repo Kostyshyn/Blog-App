@@ -22,6 +22,7 @@
 }
 @media screen and (max-width: 780px) {   
 	.col-4 { width: 100%; }
+	.col-8 { width: 100%; }
 	.desktop_menu {
 		display: none;
 	}

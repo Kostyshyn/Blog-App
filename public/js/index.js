@@ -12,10 +12,12 @@ import Signup from '../components/Signup.vue'
 import Profile from '../components/Profile.vue'
 import CreatePost from '../components/CreatePost.vue'
 
+import auth from './auth.js'
+
 Vue.use(VueResource);
 Vue.use(VueRouter);
 
-const router = new VueRouter({
+export const router = new VueRouter({
 	mode: 'history',
 	linkActiveClass: 'active',
 	scrollBehavior(to, from, savedPosition){
@@ -35,6 +37,7 @@ const router = new VueRouter({
 	},
 	routes: [
 		{
+			name: 'home',
 			path: '/',
 			component: Home
 		},
@@ -51,6 +54,12 @@ const router = new VueRouter({
 			component: Posts
 		},
 		{
+			name: 'create-post',
+			path: '/posts/create',
+			component: CreatePost,
+			meta: { auth: true }
+		},
+		{
 			name: 'post',
 			path: '/posts/:href',
 			component: Post,
@@ -65,12 +74,13 @@ const router = new VueRouter({
 		{
 			name: 'profile',
 			path: '/profile',
-			component: Profile
+			component: Profile,
+			props: true,
+			meta: { auth: true }
 		},
 		{
-			name: 'create-post',
-			path: '/create-post',
-			component: CreatePost
+			path: '*',
+			redirect: '/'
 		}
 	]
 });
@@ -78,6 +88,9 @@ const router = new VueRouter({
 export var Event = new Vue({});
 
 router.beforeEach(function(to, from, next){
+	if (to.meta.auth){
+		console.log('private route');
+	}
 	Event.$emit('changeState')
 	next();
 });
