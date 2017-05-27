@@ -37,7 +37,7 @@
 							</div>
 							<div class="post-preview-content">
 								<div class="post-preview-text">
-									<p>{{ post.text }}</p>
+									<p>{{ post.text.slice(0, 200) }}...</p>
 								</div>
 								<div class="post-preview-controll">
 									<div class="post-comment-icon">

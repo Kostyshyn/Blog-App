@@ -39,7 +39,6 @@
 @media screen and (max-width: 560px) {
 	[class*='col-'] {
 	  	float: left;
-	  	padding: 10px 0px;
 	}
 	section {
 		padding: 0px 10px;
@@ -75,6 +74,9 @@
 		width: 250px;
 		right: -250px;
 		transform: translateX(-250px);
+	}
+	.open_button {
+		padding-right: 5px;
 	}
 	.hidden {
 		transform: translateX(0);
