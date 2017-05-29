@@ -35,7 +35,7 @@ export default {
 	methods: {
 		createPost: function(e){
 			e.preventDefault();
-			this.tags = this.tags.trim().split(', ');
+			this.tags = this.tags.trim().split(', '); // set 'var tags = ...'
 			this.$http.post('/api/posts', {
 				title: this.title,
 				text: this.text,

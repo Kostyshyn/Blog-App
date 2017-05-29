@@ -26,8 +26,8 @@ section {
 }
 [class*='col-'] {
   	float: left;
-  	/*padding: 5px 5px;*/
-  	padding: 10px 5px;
+  	padding: 5px 5px;
+  	/*padding: 10px 5px;*/
 }
 .col-1  { width: 8.33%;  } 
 .col-2  { width: 16.66%; }
@@ -171,7 +171,8 @@ nav {
 }
 .fixed_menu {
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
-	background-color: #47c9af;
+	/*background-color: #47c9af;*/
+	background-color: #1ca7ea;
 	color: white;
 	height: 60px;
 	position: fixed;

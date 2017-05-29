@@ -40,12 +40,14 @@
 	text-decoration: underline;
 }
 .post-preview-header {
-	border-bottom: 2px solid #cac9cd;
+	/*border-bottom: 2px solid #cac9cd;*/
 }
 .post-preview-header h1 {
 	font-size: 1.3em;
 	position: relative;
-	/*padding-right: 30px;*/
+	display: inline-block;
+	padding: 10px 0px;
+
 }
 .post-preview-header h1 a {
 	color: grey;
@@ -70,7 +72,7 @@
 	display: inline-block;
 }
 .post-author {
-	margin-top: -15px;
+	margin-top: -10px;
 }
 .post-author a {
 	display: inline-block;
@@ -101,7 +103,6 @@
 	font-size: 14px;
 	position: absolute;
 	right: 0px;
-	top: -4px;
 }
 .post-date span {
 	/*margin-bottom: -5px;*/
@@ -116,7 +117,7 @@
 	display: inline-block;
 }
 .post-preview-text {
-	padding: 15px 0px;
+	padding-bottom: 15px;
 	border-bottom: 2px solid #cac9cd;
 	line-height: 22px;
 	color: #333;
@@ -205,20 +206,21 @@
 .post {
 	width: 100%;
 	height: auto;
-	padding: 20px;
+	padding: 20px 10px;
 }
 .post-header {
-	border-bottom: 2px solid #cac9cd;
-	padding-bottom: 30px;
+	/*border-bottom: 2px solid #cac9cd;*/
+	/*padding-bottom: 30px;*/
 }
 .post-header h1 {
-	padding-top: 20px;
+	padding-top: 30px;
 	font-size: 2.3em;
 	color: grey;
 }
 .post-tags {
 	width: 100%;
 	padding-top: 10px;
+	padding-bottom: 10px
 }
 .main-post-info {
 	text-align: left;

@@ -6,9 +6,9 @@
 }
 @media screen and (max-width: 980px) {
 	.menu {
-		width: 315px;
-		right: -315px;
-		transform: translateX(-315px);
+		width: 272px;
+		right: -272px;
+		transform: translateX(-272px);
 	}
 	.desktop_menu ul li a {
 		font-size: 18px;
@@ -71,9 +71,9 @@
 	}
 	.menu {
 		top: 60px;
-		width: 250px;
-		right: -250px;
-		transform: translateX(-250px);
+		width: 200px;
+		right: -200px;
+		transform: translateX(-200px);
 	}
 	.open_button {
 		padding-right: 5px;
