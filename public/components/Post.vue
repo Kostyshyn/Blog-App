@@ -54,9 +54,9 @@
 					</div>
 				</div>
 			</section>
+			<!-- comments list and form -->
+			<comments :comments="post.comments" :href="post.href"></comments>
 		</div>
-		<!-- comments list and form -->
-		<comments></comments>
 	</div>
 </template>
 

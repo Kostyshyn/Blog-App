@@ -39,8 +39,8 @@ module.exports.addComment = function(href, user, text){
 					} else {
 						var comment = {
 							text: text,
-							author: user.id,
-							post: post.id
+							author: user._id,
+							post: post._id
 						};
 						Comment.create(comment, function(err, comment){
 							if (err){
@@ -51,7 +51,23 @@ module.exports.addComment = function(href, user, text){
 									if (err){
 										reject(err);
 									} else {
-										resolve(post);
+										user.comments.push(comment);
+										user.save(function(err, user){
+											if (err){
+												resolve(err);
+											} else {
+												Comment.populate(comment, {
+													path: 'author',
+													select: ['username', 'profile_img']
+												}, function(err, comment){
+													if (err){
+														reject(err);
+													} else {
+														resolve(comment);
+													}
+												});
+											}
+										});
 									}
 								});
 							}

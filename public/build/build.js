@@ -3846,6 +3846,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	name: 'comment',
+	props: ['comment'],
 	data: function () {
 		return {};
 	},
@@ -3897,10 +3898,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	components: {
 		Comment: __WEBPACK_IMPORTED_MODULE_0__Comment_vue___default.a
 	},
+	props: ['comments', 'href'],
 	data: function () {
-		return {};
+		return {
+			text: null,
+			info: null,
+			newComment: null,
+			error: null
+		};
 	},
-	methods: {}
+	methods: {
+		sendComment: function (e) {
+			e.preventDefault();
+			this.$http.post('/api/posts/' + this.href + '/comments', {
+				text: this.text
+			}).then(function (response) {
+
+				this.newComment = response.data.data; // add populate 
+
+				this.comments.push(this.newComment);
+			}, function (response) {
+				// error callback
+				console.log('error:', response.body.message);
+				this.error = response.body.message;
+			});
+		}
+	}
 });
 
 /***/ }),
@@ -8469,35 +8492,57 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "id": "comments"
     }
-  }, [_vm._m(0), _vm._v(" "), _c('section', [_c('div', {
+  }, [_c('section', [_c('div', {
     staticClass: "grid-row"
   }, [_c('div', {
     staticClass: "col-12"
   }, [_c('div', {
-    staticClass: "comments-list"
-  }, [_c('comment')], 1)])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('div', {
-    staticClass: "grid-row"
-  }, [_c('div', {
-    staticClass: "col-12"
-  }, [_c('div', {
-    staticClass: "comment-form box"
+    staticClass: "comment-form"
   }, [_c('h3', [_vm._v("Add comment")]), _vm._v(" "), _c('form', {
     attrs: {
       "action": ""
     }
   }, [_c('textarea', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.text),
+      expression: "text"
+    }],
     attrs: {
-      "name": "",
+      "name": "text",
       "id": "",
       "cols": "30",
       "rows": "10"
+    },
+    domProps: {
+      "value": (_vm.text)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.text = $event.target.value
+      }
     }
   }), _vm._v(" "), _c('button', {
-    staticClass: "button primary"
-  }, [_vm._v("Send comment")])])])])])])
-}]}
+    staticClass: "button primary",
+    on: {
+      "click": _vm.sendComment
+    }
+  }, [_vm._v("Send comment")])])])])])]), _vm._v(" "), _c('section', [_c('div', {
+    staticClass: "grid-row"
+  }, [_c('div', {
+    staticClass: "col-12"
+  }, _vm._l((_vm.comments), function(comment) {
+    return _c('div', {
+      staticClass: "comments-list"
+    }, [_c('comment', {
+      attrs: {
+        "comment": comment
+      }
+    })], 1)
+  }))])])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -8559,7 +8604,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t" + _vm._s(tag) + "\n\t\t\t\t\t\t\t\t\t")])], 1)
   }))]), _vm._v(" "), _c('div', {
     staticClass: "main-post-text"
-  }, [_c('p', [_vm._v(_vm._s(_vm.post.text))])]), _vm._v(" "), _vm._m(1)])])])])]), _vm._v(" "), _c('comments')], 1) : _vm._e()
+  }, [_c('p', [_vm._v(_vm._s(_vm.post.text))])]), _vm._v(" "), _vm._m(1)])])])]), _vm._v(" "), _c('comments', {
+    attrs: {
+      "comments": _vm.post.comments,
+      "href": _vm.post.href
+    }
+  })], 1)]) : _vm._e()
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "author-info"
@@ -9045,10 +9095,8 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "comment box"
+    staticClass: "comment"
   }, [_c('div', {
     staticClass: "comment-info"
   }, [_c('div', {
@@ -9061,14 +9109,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "comment-author-avatar"
   }), _vm._v(" "), _c('div', {
     staticClass: "comment-author-name"
-  }, [_vm._v("\n\t\t\t\t\tKostyhyn\n\t\t\t\t")])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n\t\t\t\t\t" + _vm._s(_vm.comment.author.username) + "\n\t\t\t\t")])])]), _vm._v(" "), _c('div', {
     staticClass: "comment-date"
   }, [_c('p', [_c('span', {
     staticClass: "icon calendar"
-  }), _vm._v("7.05.2017")])])]), _vm._v(" "), _c('div', {
+  }), _vm._v(_vm._s(_vm.comment.date))])])]), _vm._v(" "), _c('div', {
     staticClass: "comment-text"
-  }, [_c('p', [_vm._v("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, tempore perferendis laboriosam, officiis, repellendus, molestiae iste nobis nulla obcaecati amet corrupti quia praesentium ipsam deleniti corporis non hic provident quidem.")])])])
-}]}
+  }, [_c('p', [_vm._v(_vm._s(_vm.comment.text))])])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

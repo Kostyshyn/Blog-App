@@ -68,7 +68,10 @@ var Like = module.exports = mongoose.model('Like', likeSchema);
 
 module.exports.getPosts = function(limit){
 	return new Promise(function(resolve, reject){
-		Post.find({}).populate('author', ['username', 'profile_img']).exec(function(err, posts){
+		Post.find({}).populate({
+			path: 'author', 
+			select: ['username', 'profile_img']
+		}).exec(function(err, posts){
 			if (err){
 				reject(err);
 			} else {
@@ -81,7 +84,19 @@ module.exports.getPosts = function(limit){
 module.exports.getPostByHref = function(href){
 	var query = {href: href};
 	return new Promise(function(resolve, reject){
-		Post.findOne(query).populate('author', ['username', 'profile_img']).exec(function(err, post){
+		Post.findOne(query).populate([{
+			path: 'author', 
+			model: 'User',
+			select: ['username', 'profile_img']
+		}, {
+			path: 'comments',
+			model: 'Comment',
+			populate: {
+				path: 'comment.author',
+				model: 'User',
+				select: ['username', 'profile_img']
+			}
+		}]).exec(function(err, post){
 			if (err){
 				reject(err);
 			} else {
@@ -93,7 +108,7 @@ module.exports.getPostByHref = function(href){
 
 module.exports.getPostByTag = function(tag){
 	var query = {tags: tag};
-	return new Promise(function(resolve, reject){
+	return new Promise(function(resolve, reject){ // change to new populate { }
 		Post.find(query).populate('author', ['username', 'profile_img']).exec(function(err, post){
 			if (err){
 				reject(err);

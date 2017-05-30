@@ -1,21 +1,21 @@
 <template>
-	<div class="comment box">
+	<div class="comment">
 		<div class="comment-info">
 			<div class="comment-author">
 				<a href="">
 					<div class="comment-author-avatar">
 					</div>
 					<div class="comment-author-name">
-						Kostyhyn
+						{{ comment.author.username }}
 					</div>
 				</a>
 			</div>
 			<div class="comment-date">
-				<p><span class="icon calendar"></span>7.05.2017</p>
+				<p><span class="icon calendar"></span>{{ comment.date }}</p>
 			</div>
 		</div>
 		<div class="comment-text">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, tempore perferendis laboriosam, officiis, repellendus, molestiae iste nobis nulla obcaecati amet corrupti quia praesentium ipsam deleniti corporis non hic provident quidem.</p>
+			<p>{{ comment.text }}</p>
 		</div>
 	</div>
 </template>
@@ -24,6 +24,7 @@
 <script>
 export default {
 	name: 'comment',
+	props: ['comment'],
 	data: function(){
 		return {}
 	},

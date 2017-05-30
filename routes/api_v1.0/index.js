@@ -4,6 +4,7 @@ const router = express.Router();
 const authController = require('../../controllers/authentification');
 const userController = require('../../controllers/user');
 const postController = require('../../controllers/post');
+const commentController = require('../../controllers/comment.js');
 
 // require Models //
 
@@ -34,7 +35,9 @@ router.get('/logout', isAuth, authController.logout);
 
 router.get('/user', userController.getProfile);
 
+// comments
 
+router.post('/posts/:href/comments', isAuth, commentController.addComment);
 
 module.exports = router;
 
