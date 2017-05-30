@@ -11,6 +11,24 @@
 	height: 5px;
 	margin: 5px 0px;
 }
+.preloader {
+
+}
+.preloader img {
+	display: block;
+	margin: 0 auto;
+	height: 200px;
+}
+.preloader div {
+	text-align: center;
+	padding: 20px;
+}
+.preloader div h1, .preloader div h3 {
+	color: grey;
+}
+.preloader div h1 {
+	margin-bottom: 15px;
+}
 .main-page-header {
 	width: 100%;
 	height: 200px;
@@ -317,7 +335,7 @@
 	display: inline-block;
 }
 .comment-author {
-	margin-top: -15px;
+	margin-top: -10px;
 }
 .comment-author a {
 	display: inline-block;
@@ -343,11 +361,13 @@
 	background-image: url('../img/user.png');
 	border-radius: 50%;
 	position: absolute;
+	top: 14px;
 }
 .comment-date {
 	color: grey;
 	font-size: 14px;
 	text-align: right;
+	height: 40px;	
 }
 .comment-text {
 	padding-top: 12px;

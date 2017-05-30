@@ -40,7 +40,8 @@ module.exports.addComment = function(href, user, text){
 						var comment = {
 							text: text,
 							author: user._id,
-							post: post._id
+							post: post._id,
+							date: Date.now()
 						};
 						Comment.create(comment, function(err, comment){
 							if (err){

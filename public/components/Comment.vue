@@ -11,7 +11,7 @@
 				</a>
 			</div>
 			<div class="comment-date">
-				<p><span class="icon calendar"></span>{{ comment.date }}</p>
+				<p><span class="icon calendar"></span>{{ comment.date | formatDate }}</p>
 			</div>
 		</div>
 		<div class="comment-text">
@@ -22,11 +22,19 @@
 
 
 <script>
+
+import moment from '../bower/moment/min/moment-with-locales.min.js'
+
 export default {
 	name: 'comment',
 	props: ['comment'],
 	data: function(){
 		return {}
+	},
+	filters: {
+		formatDate: function(date){
+			return moment(date).format('ll');
+		}
 	},
 	methods: {
 	}
