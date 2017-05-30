@@ -45,6 +45,9 @@
 		width: 100%;
 	}
 	.col-4 { width: 100%; }
+/*	.main-page-header {
+		height: 200px;
+	}*/
 	.main-post-author, .comment-author {
 		width: 39%;
 	}

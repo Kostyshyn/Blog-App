@@ -1,14 +1,21 @@
 <template>
-	<section>
-		<div class="grid-row">
-			<div class="col-12">
-				<div class="main-page-header box">
-					<h1>Home page</h1>
+	<div>
+		<div class="main-page-header">
+			<h1>Home page</h1>
+		</div>
+		<section>
+			<div class="grid-row">
+				<div class="col-12">
+					
+					<div class="main-article">
+						<h1>Posts</h1>
+					</div>
+
 				</div>
-			</div>
-		</div>	
-		<post-preview></post-preview>
-	</section>
+			</div>	
+			<post-preview></post-preview>
+		</section>
+	</div>
 </template>
 
 <style>

@@ -2,7 +2,7 @@
 	<section>
 		<div class="grid-row">
 			<div class="col-12">
-				<div class="signup-form box">
+				<div class="signup-form">
 					<form action="">
 						<h1>Sign Up</h1>
 						<input type="text" placeholder="Login" v-model="username">

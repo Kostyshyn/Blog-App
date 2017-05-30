@@ -2,7 +2,7 @@
 	<section>
 		<div class="grid-row">
 			<div class="col-12">
-				<div class="login-form box">
+				<div class="login-form">
 					<h1>Enter login and password</h1>
 					<form action="">
 						<input type="text" placeholder="Login" v-model="username">

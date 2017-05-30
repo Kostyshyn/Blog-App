@@ -1,9 +1,10 @@
 .main-content {
 	width: 100%;
 	min-height: 100vh;
-	padding-top: 20px;
+	/*padding-top: 20px;*/
 	height: auto;
-	background-color: #eeeeee;
+	padding-bottom: 20px;
+	/*background-color: #eeeeee;*/
 }
 .divider {
 	background-color: #1ca7ea;
@@ -12,12 +13,7 @@
 	margin: 5px 0px;
 }
 .preloader {
-
-}
-.preloader img {
-	display: block;
-	margin: 0 auto;
-	height: 200px;
+	
 }
 .preloader div {
 	text-align: center;
@@ -29,11 +25,29 @@
 .preloader div h1 {
 	margin-bottom: 15px;
 }
+.preloader-cover {
+	background-position: center;
+	background-size: 150px;
+	background-repeat: no-repeat;
+	height: 150px;
+	background-image: url('../img/preloader.gif');
+}
 .main-page-header {
 	width: 100%;
-	height: 200px;
-	padding: 10px; 
-	/*margin-bottom: 20px;*/
+	height: 350px;
+	padding: 20px; 
+	background-position: center;
+	background-size: cover;
+	background-image: url('../img/front-end-image.jpg');
+	margin-bottom: 5px;
+	text-align: center;
+	color: white;
+}
+.main-article {
+	color: grey;
+	height: 150px;
+	text-align: center;
+	padding: 20px;
 }
 /* Post  preview */
 .post-preview {
@@ -220,12 +234,11 @@
 
 .post-wrap {
 	background-color: white;
-	margin-top: -20px;
 }
 .post {
 	width: 100%;
 	height: auto;
-	padding: 20px 10px;
+	padding: 20px 0px;
 }
 .post-header {
 	/*border-bottom: 2px solid #cac9cd;*/
@@ -292,6 +305,7 @@
 .main-post-controll {
 	position: relative;
 	padding-top: 20px;
+	margin-bottom: 30px;
 }
 .main-post-controll .post-like {
 	margin-left: 190px;
@@ -302,8 +316,7 @@
 /*comments*/
 
 .comment-form {
-	padding: 20px 10px;
-	margin-top: 10px;
+	padding: 10px 0px;
 	/*display: none;*/
 }
 .comment-form textarea {
@@ -321,7 +334,8 @@
 	margin-bottom: 15px;
 }
 .comment {
-	padding: 10px 10px;
+	padding: 20px;
+	margin-bottom: 10px;
 }
 .comment-info {
 	text-align: left;
@@ -361,7 +375,7 @@
 	background-image: url('../img/user.png');
 	border-radius: 50%;
 	position: absolute;
-	top: 14px;
+	top: 0px;
 }
 .comment-date {
 	color: grey;
@@ -371,9 +385,8 @@
 }
 .comment-text {
 	padding-top: 12px;
-	padding-bottom: 20px;
 	color: #333;
-	border-bottom: 2px solid #cac9cd;
+	/*border-bottom: 2px solid #cac9cd;*/
 }
 
 /*Signup form*/

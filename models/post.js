@@ -92,7 +92,7 @@ module.exports.getPostByHref = function(href){
 			path: 'comments',
 			model: 'Comment',
 			populate: {
-				path: 'comment.author',
+				path: 'author',
 				model: 'User',
 				select: ['username', 'profile_img']
 			}

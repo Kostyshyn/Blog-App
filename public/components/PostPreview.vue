@@ -66,7 +66,9 @@
 		<div class="grid-row"  v-else>
 			<div class="col-12">
 				<div class="preloader box">
-					<img src="../img/preloader.gif" alt="" v-if="!error">
+					<div class="preloader-cover" v-if="!error">
+						
+					</div>
 					<div v-else>
 						<h1>Connection error</h1>
 						<h3>{{ error }}</h3>

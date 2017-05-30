@@ -51,10 +51,11 @@
 										</div>
 									</div>
 								</div>
+								<div class="divider"></div>
 							</div>
 						</div>
 					</div>
-				</section>
+				</section>				
 				<!-- comments list and form -->
 				<comments :comments="post.comments" :href="post.href"></comments>
 			</div>
