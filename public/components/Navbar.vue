@@ -33,7 +33,7 @@
 			</ul>
 			<ul class="navbar_buttons" v-else-if="!isAuth">
 				<li>
-					<router-link to="/login" tag="a" class="button white">Login</router-link>	
+					<router-link to="/login" tag="a" class="button">Login</router-link>	
 				</li>
 				<li>
 					<router-link to="/signup" tag="a" class="button yellow">Sign Up</router-link>

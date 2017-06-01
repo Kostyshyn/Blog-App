@@ -5,28 +5,29 @@
 				<div class="col-4" v-for="post in row">
 					<div class="post-preview-wrap">
 						<div class="post-preview box">
+							<div class="post-info">
+								<div class="post-author">
+									<a href="">
+										<div class="post-author-avatar" v-bind:style="{ 'background-image': 'url(../img/' + post.author.profile_img + ');' }">
+										</div>
+										<div class="post-author-name">
+											{{ post.author.username }}	
+										</div>
+									</a>
+								</div>
+								<div class="post-date">
+									<p><span class="icon calendar"></span>
+										{{ post.date | formatDate }}
+									</p>
+								</div>
+							</div>
 							<div class="post-preview-img">
 								<div class="post-preview-head">									
 								</div>
 							</div>
 							<div class="post-preview-info">
 								<div class="post-preview-header">
-									<div class="post-info">
-										<div class="post-author">
-											<a href="">
-												<div class="post-author-avatar" v-bind:style="{ 'background-image': 'url(../img/' + post.author.profile_img + ');' }">
-												</div>
-												<div class="post-author-name">
-													{{ post.author.username }}	
-												</div>
-											</a>
-										</div>
-										<div class="post-date">
-											<p><span class="icon calendar"></span>
-												{{ post.date | formatDate }}
-											</p>
-										</div>
-									</div>
+
 									<h1>
 										<router-link :to="{ name: 'post', params: {
 											href: post.href

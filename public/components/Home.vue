@@ -1,7 +1,16 @@
 <template>
 	<div>
 		<div class="main-page-header">
-			<h1>Home page</h1>
+			<section>
+				<div class="grid-row">
+					<div class="col-12">
+						<div class="page-top">
+							<h1>Home page</h1>
+							<a href="" class="button big white">Get Started</a>
+						</div>
+					</div>
+				</div>
+			</section>
 		</div>
 		<section>
 			<div class="grid-row">

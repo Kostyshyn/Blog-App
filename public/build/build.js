@@ -4079,6 +4079,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4438,6 +4447,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bower_lodash_dist_lodash_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__bower_lodash_dist_lodash_min_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bower_moment_min_moment_with_locales_min_js__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bower_moment_min_moment_with_locales_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__bower_moment_min_moment_with_locales_min_js__);
+//
 //
 //
 //
@@ -7728,7 +7738,7 @@ exports = module.exports = __webpack_require__(30)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -9111,7 +9121,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Profile")])], 1)]) : (!_vm.isAuth) ? _c('ul', {
     staticClass: "navbar_buttons"
   }, [_c('li', [_c('router-link', {
-    staticClass: "button white",
+    staticClass: "button",
     attrs: {
       "to": "/login",
       "tag": "a"
@@ -9224,10 +9234,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "post-preview-wrap"
       }, [_c('div', {
         staticClass: "post-preview box"
-      }, [_vm._m(0, true), _vm._v(" "), _c('div', {
-        staticClass: "post-preview-info"
-      }, [_c('div', {
-        staticClass: "post-preview-header"
       }, [_c('div', {
         staticClass: "post-info"
       }, [_c('div', {
@@ -9247,7 +9253,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "post-date"
       }, [_c('p', [_c('span', {
         staticClass: "icon calendar"
-      }), _vm._v("\n\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(_vm._f("formatDate")(post.date)) + "\n\t\t\t\t\t\t\t\t\t\t")])])]), _vm._v(" "), _c('h1', [_c('router-link', {
+      }), _vm._v("\n\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(_vm._f("formatDate")(post.date)) + "\n\t\t\t\t\t\t\t\t\t\t")])])]), _vm._v(" "), _vm._m(0, true), _vm._v(" "), _c('div', {
+        staticClass: "post-preview-info"
+      }, [_c('div', {
+        staticClass: "post-preview-header"
+      }, [_c('h1', [_c('router-link', {
         attrs: {
           "to": {
             name: 'post',
@@ -9344,7 +9354,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "main-page-header"
-  }, [_c('h1', [_vm._v("Home page")])])
+  }, [_c('section', [_c('div', {
+    staticClass: "grid-row"
+  }, [_c('div', {
+    staticClass: "col-12"
+  }, [_c('div', {
+    staticClass: "page-top"
+  }, [_c('h1', [_vm._v("Home page")]), _vm._v(" "), _c('a', {
+    staticClass: "button big white",
+    attrs: {
+      "href": ""
+    }
+  }, [_vm._v("Get Started")])])])])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "grid-row"
