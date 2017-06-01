@@ -174,11 +174,29 @@
 	padding-top: 15px;
 	text-align: right;
 	/*display: none;*/
+	position: relative;
 }
 .post-like, .post-comment-icon, .comment-icon-count, .like-count {
 	height: 16px;
 	display: inline-block;
 	color: grey;
+}
+.post-views {
+	display: inline-block;
+	height: 20px;
+	position: absolute;
+	left: 0px;
+	top: 14px;
+	color: grey;
+}
+.post-views span {
+	display: inline-block;
+	margin-bottom: -4px;
+}
+.views-count {
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
 }
 .post-comment-icon { 
 	margin-right: 20px;

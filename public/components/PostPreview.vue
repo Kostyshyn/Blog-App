@@ -42,6 +42,10 @@
 										</span>
 									</div>
 									<div class="post-preview-controll">
+										<div class="post-views">
+											<span class="icon view-icon"></span>
+											<div class="views-count">0</div>
+										</div>
 										<div class="post-comment-icon">
 											<router-link to="/posts" tag="a">
 												<span class="icon comment-icon"></span>

@@ -89,6 +89,11 @@ section {
 .comment-icon {
 	background-image: url('../img/comment.png')
 }
+.view-icon {
+	background-image: url('../img/eye.png');
+	height: 20px;
+	width: 20px;
+}
 .big_icon {
 	width: 25px;
 	height: 25px;

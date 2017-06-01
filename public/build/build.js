@@ -4522,6 +4522,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -9275,7 +9279,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(tag) + "\n\t\t\t\t\t\t\t\t\t\t")])], 1)
       })), _vm._v(" "), _c('div', {
         staticClass: "post-preview-controll"
-      }, [_c('div', {
+      }, [_vm._m(1, true), _vm._v(" "), _c('div', {
         staticClass: "post-comment-icon"
       }, [_c('router-link', {
         attrs: {
@@ -9314,6 +9318,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "post-preview-head"
   })])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "post-views"
+  }, [_c('span', {
+    staticClass: "icon view-icon"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "views-count"
+  }, [_vm._v("0")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
