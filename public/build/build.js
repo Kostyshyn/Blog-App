@@ -4521,6 +4521,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -9123,7 +9124,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "open_button"
   }, [_c('img', {
     attrs: {
-      "src": "img/list-menu.png",
+      "src": "img/list-menu-black.png",
       "alt": ""
     }
   })])
@@ -9219,7 +9220,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "post-preview-wrap"
       }, [_c('div', {
         staticClass: "post-preview box"
-      }, [_c('div', {
+      }, [_vm._m(0, true), _vm._v(" "), _c('div', {
         staticClass: "post-preview-info"
       }, [_c('div', {
         staticClass: "post-preview-header"
@@ -9253,7 +9254,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           "tag": "a",
           "exact": ""
         }
-      }, [_vm._v(_vm._s(post.title))])], 1), _vm._v(" "), _c('div', {
+      }, [_vm._v(_vm._s(post.title))])], 1)]), _vm._v(" "), _c('div', {
+        staticClass: "post-preview-content"
+      }, [_c('div', {
         staticClass: "post-preview-tags"
       }, _vm._l((post.tags), function(tag) {
         return _c('span', {
@@ -9269,12 +9272,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
             "tag": "a",
             "exact": ""
           }
-        }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(tag) + "\n\t\t\t\t\t\t\t\t\t\t")])], 1)
-      }))]), _vm._v(" "), _c('div', {
-        staticClass: "post-preview-content"
-      }, [_c('div', {
-        staticClass: "post-preview-text"
-      }, [_c('p', [_vm._v(_vm._s(post.text.slice(0, 200)) + "...")])]), _vm._v(" "), _c('div', {
+        }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(tag) + "\n\t\t\t\t\t\t\t\t\t\t")])], 1)
+      })), _vm._v(" "), _c('div', {
         staticClass: "post-preview-controll"
       }, [_c('div', {
         staticClass: "post-comment-icon"
@@ -9284,7 +9283,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           "tag": "a"
         }
       }, [_c('span', {
-        staticClass: "icon comment-icon big_icon"
+        staticClass: "icon comment-icon"
       }), _vm._v(" "), _c('div', {
         staticClass: "comment-icon-count"
       }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(post.comments.length) + "\n\t\t\t\t\t\t\t\t\t\t\t")])])], 1), _vm._v(" "), _c('div', {
@@ -9295,7 +9294,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           }
         }
       }, [_c('span', {
-        staticClass: "icon like big_icon"
+        staticClass: "icon like"
       }), _vm._v(" "), _c('div', {
         staticClass: "like-count"
       }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(post.likes.length) + "\n\t\t\t\t\t\t\t\t\t\t")])])])])])])])])
@@ -9305,11 +9304,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "col-12"
   }, [_c('div', {
-    staticClass: "preloader box"
+    staticClass: "preloader"
   }, [(!_vm.error) ? _c('div', {
     staticClass: "preloader-cover"
   }) : _c('div', [_c('h1', [_vm._v("Connection error")]), _vm._v(" "), _c('h3', [_vm._v(_vm._s(_vm.error))])])])])])])
-},staticRenderFns: []}
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "post-preview-img"
+  }, [_c('div', {
+    staticClass: "post-preview-head"
+  })])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

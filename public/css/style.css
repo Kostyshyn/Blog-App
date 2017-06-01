@@ -38,7 +38,7 @@
 	padding: 20px; 
 	background-position: center;
 	background-size: cover;
-	background-image: url('../img/front-end-image.jpg');
+	background-image: url('../img/gradient-sea.jpg');
 	margin-bottom: 5px;
 	text-align: center;
 	color: white;
@@ -61,6 +61,17 @@
 .post-preview-wrap {
 
 }
+.post-preview-img {
+	border-top-right-radius: 4px; 
+	border-top-left-radius: 4px;
+	height: 170px;
+	background-position: center;
+	background-size: cover;
+	background-image: url('../img/FrontEndDev.jpg');
+	text-align: center;
+	padding: 20px ;
+
+}
 .post-preview-info {
 	padding: 20px 20px 15px 20px; 
 }
@@ -75,14 +86,17 @@
 	/*border-bottom: 2px solid #cac9cd;*/
 }
 .post-preview-header h1 {
-	font-size: 1.3em;
+	font-size: 1.5em;
 	position: relative;
 	display: inline-block;
-	padding-top: 10px;
-
 }
 .post-preview-header h1 a {
 	color: grey;
+	font-weight: bold;
+	text-decoration: none;
+}
+.post-preview-head {
+
 }
 .post-bookmark {
 	position: absolute;
@@ -153,14 +167,16 @@
 	border-bottom: 2px solid #cac9cd;
 	line-height: 22px;
 	color: #333;
-	/*display: none;*/
+	display: none;
 }
 .post-preview-controll {
+	border-top: 1px solid #cac9cd;
 	padding-top: 15px;
 	text-align: right;
+	/*display: none;*/
 }
 .post-like, .post-comment-icon, .comment-icon-count, .like-count {
-	height: 25px;
+	height: 16px;
 	display: inline-block;
 	color: grey;
 }
@@ -169,7 +185,7 @@
 }
 .post-like {
 	display: inline-block;
-	height: 25px;
+	height: 16px;
 	cursor: pointer;
 }
 .like, .comment-icon {
@@ -183,45 +199,44 @@
 	opacity: 1;
 }*/
 .post-comment-icon span { 
-	height: 25px;
-	margin-bottom: -8px;
+	height: 16px;
+	display: inline-block;
+	margin-bottom: -3px;
 }
 .post-comment-icon a {
 	display: inline-block;
-	height: 25px;
+	height: 16px;
 }
 .post-comment-icon a:hover {
 	text-decoration: none;
 }
 .post-like span { 
-	height: 25px;
-	margin-bottom: -7px;
+	height: 16px;
 }
 
 .post-preview-tags {
 	width: 100%;
-	padding: 10px 0px 20px 0px;
+	padding: 10px 0px 15px 0px;
+	/*display: none;*/
 }
 .tag {
-	font-size: 16px;
+	font-size: 14px;
 	display: inline-block;
-	min-width: 50px;
-	padding: 0px 10px;
-	height: 26px;
+	min-width: 40px;
+	padding: 0px 7px;
+	height: 24px;
 	text-align: center;
 	line-height: 24px;
-	color: #ff5722;
-	border-radius: 4px;
+	color: white;
+	border-radius: 3px;
 	margin-right: 5px;
 	/*background-color: #1abc9c;*/
 	/*background-color: #1ca7ea;*/
-	border: 2px solid #ff5722;
-	background-color: transparent;
-	transition: .2s ease-in-out;
+	background-color: #40e0d0;
+
 }
 .tag:hover {
-	color: white;
-	background-color: #ff5722;
+	
 }
 .tag a {
 	color: inherit;

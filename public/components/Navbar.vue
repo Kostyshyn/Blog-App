@@ -10,7 +10,7 @@
 			</div>
 			<div class="mobile_menu">
 				<div class="open_button">
-					<img src="img/list-menu.png" alt="">
+					<img src="img/list-menu-black.png" alt="">
 				</div>
 				<div class="open_header">Menu</div>
 				<ul class="menu hidden">

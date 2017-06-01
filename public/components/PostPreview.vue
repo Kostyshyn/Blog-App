@@ -5,6 +5,10 @@
 				<div class="col-4" v-for="post in row">
 					<div class="post-preview-wrap">
 						<div class="post-preview box">
+							<div class="post-preview-img">
+								<div class="post-preview-head">									
+								</div>
+							</div>
 							<div class="post-preview-info">
 								<div class="post-preview-header">
 									<div class="post-info">
@@ -22,35 +26,32 @@
 												{{ post.date | formatDate }}
 											</p>
 										</div>
-									</div>	
-									<h1><router-link :to="{ name: 'post', params: {
-										href: post.href
-									} }" tag="a" exact >{{ post.title }}</router-link>
-									</h1>
-
+									</div>
+									<h1>
+										<router-link :to="{ name: 'post', params: {
+											href: post.href
+										} }" tag="a" exact >{{ post.title }}</router-link>
+									</h1>	
+								</div>
+								<div class="post-preview-content">
 									<div class="post-preview-tags">
 										<span class="tag" v-for="tag in post.tags">
 											<router-link :to="{ name: 'categories', params: { tag: tag } }" tag="a" exact >
-												{{ tag }}
+													{{ tag }}
 											</router-link>
 										</span>
-									</div>
-								</div>
-								<div class="post-preview-content">
-									<div class="post-preview-text">
-										<p>{{ post.text.slice(0, 200) }}...</p>
 									</div>
 									<div class="post-preview-controll">
 										<div class="post-comment-icon">
 											<router-link to="/posts" tag="a">
-												<span class="icon comment-icon big_icon"></span>
+												<span class="icon comment-icon"></span>
 												<div class="comment-icon-count">
 													{{ post.comments.length }}
 												</div>
 											</router-link>
 										</div>
 										<div class="post-like" v-on:click="like(post)">
-											<span class="icon like big_icon" v-bind:class=""></span>
+											<span class="icon like" v-bind:class=""></span>
 											<div class="like-count">
 												{{ post.likes.length }}
 											</div>
@@ -65,7 +66,7 @@
 		</div>	
 		<div class="grid-row"  v-else>
 			<div class="col-12">
-				<div class="preloader box">
+				<div class="preloader">
 					<div class="preloader-cover" v-if="!error">
 						
 					</div>
