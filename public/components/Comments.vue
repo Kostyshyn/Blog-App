@@ -2,7 +2,7 @@
 	<div id="comments">
 		<section>
 			<div class="grid-row">
-				<div class="col-12">
+				<div class="col-8">
 					<div class="comment-form">
 						<h3>Add comment</h3>
 						<form action="">
@@ -15,7 +15,7 @@
 		</section>
 		<section>
 			<div class="grid-row">
-				<div class="col-12">
+				<div class="col-8">
 					<div class="comments-list" v-for="comment in comments">
 						<comment :comment="comment"></comment>
 					</div>

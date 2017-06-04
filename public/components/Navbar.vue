@@ -22,7 +22,7 @@
 					</li>
 					<li class="hidden_button" v-else-if="!isAuth">
 						<router-link to="/login" tag="a" class="button">Login</router-link>
-						<router-link to="/signup" tag="a" class="button yellow">Sign Up</router-link>
+						<router-link to="/signup" tag="a" class="button main-button">Sign Up</router-link>
 					</li>	
 				</ul>
 			</div>
@@ -36,7 +36,7 @@
 					<router-link to="/login" tag="a" class="button">Login</router-link>	
 				</li>
 				<li>
-					<router-link to="/signup" tag="a" class="button yellow">Sign Up</router-link>
+					<router-link to="/signup" tag="a" class="button main-button">Sign Up</router-link>
 				</li>
 			</ul>
 		</div>

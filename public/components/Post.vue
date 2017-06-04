@@ -4,7 +4,7 @@
 			<div class="post-wrap">
 				<section>
 					<div class="grid-row">
-						<div class="col-12">
+						<div class="col-8">
 							<div class="post">
 								<div class="post-header">
 									<div class="main-post-info">
@@ -62,9 +62,16 @@
 								</div>
 							</div>
 						</div>
+						<div class="col-4">
+							<aside>
+								<div class="sidebar">
+									<h1>Sidebar</h1>
+								</div>
+							</aside>
+						</div>
 					</div>
 				</section>
-				<div class="divider"></div>			
+				<!-- <div class="divider"></div>			 -->
 				<!-- comments list and form -->
 				<comments :comments="post.comments" :href="post.href"></comments>
 			</div>

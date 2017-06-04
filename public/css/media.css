@@ -32,6 +32,9 @@
 	.mobile_menu {
 		display: block;
 	}
+	.main-post-cover {
+		height: 200px; 
+	}
 	footer .footer-info-wrap {
 		display: none;
 	}
@@ -66,6 +69,9 @@
 	}
 	.main-post-controll .post-views {
 		left: 180px;
+	}
+	.main-post-controll .post-like {
+		margin-right: 20px;
 	}
 	.comment-form .button {
 		width: 100%;

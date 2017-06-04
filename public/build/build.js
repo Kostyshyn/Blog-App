@@ -4409,6 +4409,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -7781,7 +7788,7 @@ exports = module.exports = __webpack_require__(30)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -8625,7 +8632,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('section', [_c('div', {
     staticClass: "grid-row"
   }, [_c('div', {
-    staticClass: "col-12"
+    staticClass: "col-8"
   }, [_c('div', {
     staticClass: "comment-form"
   }, [_c('h3', [_vm._v("Add comment")]), _vm._v(" "), _c('form', {
@@ -8662,7 +8669,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Send comment")])])])])])]), _vm._v(" "), _c('section', [_c('div', {
     staticClass: "grid-row"
   }, [_c('div', {
-    staticClass: "col-12"
+    staticClass: "col-8"
   }, _vm._l((_vm.comments), function(comment) {
     return _c('div', {
       staticClass: "comments-list"
@@ -8691,7 +8698,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('section', [_c('div', {
     staticClass: "grid-row"
   }, [_c('div', {
-    staticClass: "col-12"
+    staticClass: "col-8"
   }, [_c('div', {
     staticClass: "post"
   }, [_c('div', {
@@ -8753,9 +8760,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     class: _vm.checkLikes
   }), _vm._v(" "), _c('div', {
     staticClass: "like-count"
-  }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t" + _vm._s(_vm.post.likes.length) + "\n\t\t\t\t\t\t\t\t\t")])])])])])])]), _vm._v(" "), _c('div', {
-    staticClass: "divider"
-  }), _vm._v(" "), _c('comments', {
+  }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t" + _vm._s(_vm.post.likes.length) + "\n\t\t\t\t\t\t\t\t\t")])])])])]), _vm._v(" "), _vm._m(2)])]), _vm._v(" "), _c('comments', {
     attrs: {
       "comments": _vm.post.comments,
       "href": _vm.post.href
@@ -8774,6 +8779,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": ""
     }
   }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\tAdd to bookmarks\n\t\t\t\t\t\t\t\t\t")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-4"
+  }, [_c('aside', [_c('div', {
+    staticClass: "sidebar"
+  }, [_c('h1', [_vm._v("Sidebar")])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -9187,7 +9198,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "tag": "a"
     }
   }, [_vm._v("Login")]), _vm._v(" "), _c('router-link', {
-    staticClass: "button yellow",
+    staticClass: "button main-button",
     attrs: {
       "to": "/signup",
       "tag": "a"
@@ -9209,7 +9220,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "tag": "a"
     }
   }, [_vm._v("Login")])], 1), _vm._v(" "), _c('li', [_c('router-link', {
-    staticClass: "button yellow",
+    staticClass: "button main-button",
     attrs: {
       "to": "/signup",
       "tag": "a"
