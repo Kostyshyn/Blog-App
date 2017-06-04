@@ -53,8 +53,8 @@
 											{{ post.views }}
 										</div>
 									</div>
-									<div class="post-like">
-										<span class="icon like"></span>
+									<div class="post-like" v-on:click="like">
+										<span v-bind:class="checkLikes"></span>
 										<div class="like-count">
 											{{ post.likes.length }}
 										</div>
@@ -83,7 +83,7 @@ import Comments from './Comments.vue'
 
 export default {
 	name: 'post',
-	props: ['href'],
+	props: ['href', 'user'],
 	data: function(){
 		return {
 			post: null
@@ -106,8 +106,38 @@ export default {
 			    // error callback
 			    console.log('error:', response);
 			});
+		},
+		like: function(){
+			var self = this;
+			var elem = event.currentTarget;
+			this.$http.get('/api/posts/' + this.post.href + '/like').then(function(response){
+			    // success callback
+			    self.post.likes = response.data.data.post.likes;
+			    self.user.likes = response.data.data.user.likes;
+			}, function(response){
+			    // error callback
+			    console.log('error:', response);
+			});
 		}
 
+	},
+	computed: {
+		checkLikes: function(){
+			var self = this;
+		
+			if (this.user && this.user.likes){
+
+				var like = _.intersectionBy(this.user.likes, this.post.likes, '_id');
+
+				if (like.length > 0){
+					return 'icon like';
+				} else {
+					return 'icon like-disabled';
+				}
+			} else {
+				return 'icon like-disabled';
+			}
+		}
 	},
 	created: function(){
 		this.getPost();

@@ -20,6 +20,10 @@ var postSchema = mongoose.Schema({
 		type: Schema.ObjectId, 
 		ref: 'User'
 	},
+	cover: {
+		type: String,
+		default: ''
+	},
 	comments: [{
 		type: Schema.ObjectId,
 		ref: 'Comment'
@@ -72,10 +76,12 @@ var Like = module.exports = mongoose.model('Like', likeSchema);
 
 module.exports.getPosts = function(limit){
 	return new Promise(function(resolve, reject){
-		Post.find({}).populate({
+		Post.find({}).populate([{
 			path: 'author', 
 			select: ['username', 'profile_img']
-		}).exec(function(err, posts){
+		}, {
+			path: 'likes'
+		}]).exec(function(err, posts){
 			if (err){
 				reject(err);
 			} else {
@@ -100,6 +106,8 @@ module.exports.getPostByHref = function(href){
 				model: 'User',
 				select: ['username', 'profile_img']
 			}
+		}, {
+			path: 'likes'
 		}]).exec(function(err, post){
 			if (err){
 				reject(err);
@@ -238,12 +246,16 @@ module.exports.deletePost = function(href, user){
 module.exports.like = function(href, user){
 	return new Promise(function(resolve, reject){
 		var postQuery = { href: href };
-		Post.findOne(postQuery, function(err, post){
+		Post.findOne(postQuery).populate({
+			path: 'likes'
+		}).exec(function(err, post){
 			if (err){
 				reject(err);
 			} else {
 				var query = { _id: user };
-				mongoose.model('User').findOne(query, function(err, user){
+				mongoose.model('User').findOne(query).populate({
+					path: 'likes'
+				}).exec(function(err, user){
 					if (err){
 						reject(err);
 					} else {
@@ -270,7 +282,10 @@ module.exports.like = function(href, user){
 												if (err){
 													reject(err);
 												} else {
-													resolve(post);
+													resolve({
+														post: post,
+														user: user
+													});
 												}
 											});
 										}
@@ -293,7 +308,10 @@ module.exports.like = function(href, user){
 													if (err){
 														reject(err);
 													} else {
-														resolve(post);
+														resolve({
+															post: post,
+															user: user
+														});
 													}
 												});
 											}

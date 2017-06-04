@@ -8,6 +8,7 @@ exports.getProfile = function(req, res, next){
 			profile_img: req.user.profile_img,
 			id: req.user.id,
 			href: req.user.href,
+			likes: req.user.likes
 		};
 		res.status(200);
 		res.json({ user: user });

@@ -5,7 +5,7 @@
 		<div class="grid-container">
 			<div class="main-content">
 				<transition name="component-fade" mode="out-in">	
-					<router-view></router-view>
+					<router-view :user="user"></router-view>
 				</transition>
 			</div>
 			<blog-footer></blog-footer>

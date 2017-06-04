@@ -91,7 +91,7 @@ router.beforeEach(function(to, from, next){
 	if (to.meta.auth){
 		console.log('private route');
 	}
-	Event.$emit('changeState')
+	Event.$emit('changeState');
 	next();
 });
 

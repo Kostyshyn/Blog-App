@@ -213,7 +213,7 @@ module.exports = !__webpack_require__(9)(function(){
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP         = __webpack_require__(7)
-  , createDesc = __webpack_require__(13);
+  , createDesc = __webpack_require__(14);
 module.exports = __webpack_require__(5) ? function(object, key, value){
   return dP.f(object, key, createDesc(1, value));
 } : function(object, key, value){
@@ -225,7 +225,7 @@ module.exports = __webpack_require__(5) ? function(object, key, value){
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var anObject       = __webpack_require__(12)
+var anObject       = __webpack_require__(13)
   , IE8_DOM_DEFINE = __webpack_require__(36)
   , toPrimitive    = __webpack_require__(27)
   , dP             = Object.defineProperty;
@@ -247,7 +247,7 @@ exports.f = __webpack_require__(5) ? Object.defineProperty : function defineProp
 /***/ (function(module, exports, __webpack_require__) {
 
 var store      = __webpack_require__(25)('wks')
-  , uid        = __webpack_require__(14)
+  , uid        = __webpack_require__(15)
   , Symbol     = __webpack_require__(1).Symbol
   , USE_SYMBOL = typeof Symbol == 'function';
 
@@ -292,39 +292,6 @@ module.exports = Object.keys || function keys(O){
 
 /***/ }),
 /* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(10);
-module.exports = function(it){
-  if(!isObject(it))throw TypeError(it + ' is not an object!');
-  return it;
-};
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports) {
-
-module.exports = function(bitmap, value){
-  return {
-    enumerable  : !(bitmap & 1),
-    configurable: !(bitmap & 2),
-    writable    : !(bitmap & 4),
-    value       : value
-  };
-};
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports) {
-
-var id = 0
-  , px = Math.random();
-module.exports = function(key){
-  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
-};
-
-/***/ }),
-/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -464,6 +431,39 @@ var app = new _vue2.default({
 		return h(_Main2.default);
 	}
 });
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(10);
+module.exports = function(it){
+  if(!isObject(it))throw TypeError(it + ' is not an object!');
+  return it;
+};
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+module.exports = function(bitmap, value){
+  return {
+    enumerable  : !(bitmap & 1),
+    configurable: !(bitmap & 2),
+    writable    : !(bitmap & 4),
+    value       : value
+  };
+};
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+var id = 0
+  , px = Math.random();
+module.exports = function(key){
+  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
+};
 
 /***/ }),
 /* 16 */
@@ -3118,7 +3118,7 @@ module.exports = function(it, tag, stat){
 /***/ (function(module, exports, __webpack_require__) {
 
 var shared = __webpack_require__(25)('keys')
-  , uid    = __webpack_require__(14);
+  , uid    = __webpack_require__(15);
 module.exports = function(key){
   return shared[key] || (shared[key] = uid(key));
 };
@@ -3637,7 +3637,7 @@ module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-var anObject    = __webpack_require__(12)
+var anObject    = __webpack_require__(13)
   , dPs         = __webpack_require__(82)
   , enumBugKeys = __webpack_require__(18)
   , IE_PROTO    = __webpack_require__(24)('IE_PROTO')
@@ -4094,6 +4094,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	components: { PostPreview: __WEBPACK_IMPORTED_MODULE_0__PostPreview_vue___default.a },
+	props: ['user'],
 	data: function () {
 		return {};
 	},
@@ -4188,7 +4189,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Navbar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Navbar_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Footer_vue__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Footer_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_index_js__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_index_js__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_index_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__js_index_js__);
 //
 //
@@ -4257,7 +4258,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_auth_js__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_auth_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__js_auth_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_index_js__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_index_js__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__js_index_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__js_index_js__);
 //
 //
@@ -4415,7 +4416,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	name: 'post',
-	props: ['href'],
+	props: ['href', 'user'],
 	data: function () {
 		return {
 			post: null
@@ -4438,8 +4439,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				// error callback
 				console.log('error:', response);
 			});
+		},
+		like: function () {
+			var self = this;
+			var elem = event.currentTarget;
+			this.$http.get('/api/posts/' + this.post.href + '/like').then(function (response) {
+				// success callback
+				self.post.likes = response.data.data.post.likes;
+				self.user.likes = response.data.data.user.likes;
+			}, function (response) {
+				// error callback
+				console.log('error:', response);
+			});
 		}
 
+	},
+	computed: {
+		checkLikes: function () {
+			var self = this;
+
+			if (this.user && this.user.likes) {
+
+				var like = _.intersectionBy(this.user.likes, this.post.likes, '_id');
+
+				if (like.length > 0) {
+					return 'icon like';
+				} else {
+					return 'icon like-disabled';
+				}
+			} else {
+				return 'icon like-disabled';
+			}
+		}
 	},
 	created: function () {
 		this.getPost();
@@ -4456,6 +4487,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bower_lodash_dist_lodash_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__bower_lodash_dist_lodash_min_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bower_moment_min_moment_with_locales_min_js__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bower_moment_min_moment_with_locales_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__bower_moment_min_moment_with_locales_min_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_index_js__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_index_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__js_index_js__);
 //
 //
 //
@@ -4547,6 +4580,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
@@ -4554,6 +4588,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	name: 'post-preview',
+	props: ['user'],
 	data: function () {
 		return {
 			posts: null,
@@ -4595,16 +4630,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				this.error = 'AJAX Request failed';
 			});
 		},
-		like: function (post) {
+		like: function (post, event) {
 			var post = post;
+			var self = this;
+			var elem = event.currentTarget;
 			this.$http.get('/api/posts/' + post.href + '/like').then(function (response) {
 				// success callback
-				console.log(response.data.data.likes.length);
-				post.likes = response.data.data.likes;
+				post.likes = response.data.data.post.likes;
+				self.user.likes = response.data.data.user.likes;
 			}, function (response) {
 				// error callback
 				console.log('error:', response);
 			});
+		},
+		checkLikes: function (likes) {
+			var self = this;
+
+			if (this.user && this.user.likes) {
+
+				var like = __WEBPACK_IMPORTED_MODULE_0__bower_lodash_dist_lodash_min_js___default.a.intersectionBy(this.user.likes, likes, '_id');
+
+				if (like.length > 0) {
+					return 'icon like';
+				} else {
+					return 'icon like-disabled';
+				}
+			} else {
+				return 'icon like-disabled';
+			}
 		}
 	},
 	created: function () {
@@ -7132,7 +7185,7 @@ module.exports = Array.isArray || function isArray(arg){
 "use strict";
 
 var create         = __webpack_require__(38)
-  , descriptor     = __webpack_require__(13)
+  , descriptor     = __webpack_require__(14)
   , setToStringTag = __webpack_require__(23)
   , IteratorPrototype = {};
 
@@ -7171,7 +7224,7 @@ module.exports = function(object, el){
 /* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var META     = __webpack_require__(14)('meta')
+var META     = __webpack_require__(15)('meta')
   , isObject = __webpack_require__(10)
   , has      = __webpack_require__(2)
   , setDesc  = __webpack_require__(7).f
@@ -7230,7 +7283,7 @@ var meta = module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP       = __webpack_require__(7)
-  , anObject = __webpack_require__(12)
+  , anObject = __webpack_require__(13)
   , getKeys  = __webpack_require__(11);
 
 module.exports = __webpack_require__(5) ? Object.defineProperties : function defineProperties(O, Properties){
@@ -7248,7 +7301,7 @@ module.exports = __webpack_require__(5) ? Object.defineProperties : function def
 /***/ (function(module, exports, __webpack_require__) {
 
 var pIE            = __webpack_require__(22)
-  , createDesc     = __webpack_require__(13)
+  , createDesc     = __webpack_require__(14)
   , toIObject      = __webpack_require__(3)
   , toPrimitive    = __webpack_require__(27)
   , has            = __webpack_require__(2)
@@ -7464,17 +7517,17 @@ var global         = __webpack_require__(1)
   , $fails         = __webpack_require__(9)
   , shared         = __webpack_require__(25)
   , setToStringTag = __webpack_require__(23)
-  , uid            = __webpack_require__(14)
+  , uid            = __webpack_require__(15)
   , wks            = __webpack_require__(8)
   , wksExt         = __webpack_require__(29)
   , wksDefine      = __webpack_require__(28)
   , keyOf          = __webpack_require__(80)
   , enumKeys       = __webpack_require__(74)
   , isArray        = __webpack_require__(77)
-  , anObject       = __webpack_require__(12)
+  , anObject       = __webpack_require__(13)
   , toIObject      = __webpack_require__(3)
   , toPrimitive    = __webpack_require__(27)
-  , createDesc     = __webpack_require__(13)
+  , createDesc     = __webpack_require__(14)
   , _create        = __webpack_require__(38)
   , gOPNExt        = __webpack_require__(84)
   , $GOPD          = __webpack_require__(83)
@@ -8692,9 +8745,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('div', {
     staticClass: "views-count"
   }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t" + _vm._s(_vm.post.views) + "\n\t\t\t\t\t\t\t\t\t")])]), _vm._v(" "), _c('div', {
-    staticClass: "post-like"
+    staticClass: "post-like",
+    on: {
+      "click": _vm.like
+    }
   }, [_c('span', {
-    staticClass: "icon like"
+    class: _vm.checkLikes
   }), _vm._v(" "), _c('div', {
     staticClass: "like-count"
   }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t" + _vm._s(_vm.post.likes.length) + "\n\t\t\t\t\t\t\t\t\t")])])])])])])]), _vm._v(" "), _c('div', {
@@ -9233,7 +9289,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "name": "component-fade",
       "mode": "out-in"
     }
-  }, [_c('router-view')], 1)], 1), _vm._v(" "), _c('blog-footer')], 1)], 1)
+  }, [_c('router-view', {
+    attrs: {
+      "user": _vm.user
+    }
+  })], 1)], 1), _vm._v(" "), _c('blog-footer')], 1)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -9312,7 +9372,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
             "tag": "a",
             "exact": ""
           }
-        }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(tag) + "\n\t\t\t\t\t\t\t\t\t\t")])], 1)
+        }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(tag) + "\n\t\t\t\t\t\t\t\t\t\t")])], 1)
       })), _vm._v(" "), _c('div', {
         staticClass: "post-preview-controll"
       }, [_c('div', {
@@ -9336,11 +9396,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "post-like",
         on: {
           "click": function($event) {
-            _vm.like(post)
+            _vm.like(post, $event)
           }
         }
       }, [_c('span', {
-        staticClass: "icon like"
+        class: _vm.checkLikes(post.likes)
       }), _vm._v(" "), _c('div', {
         staticClass: "like-count"
       }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(post.likes.length) + "\n\t\t\t\t\t\t\t\t\t\t")])])])])])])])])
@@ -9374,7 +9434,11 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_vm._m(0), _vm._v(" "), _c('section', [_vm._m(1), _vm._v(" "), _c('post-preview')], 1)])
+  return _c('div', [_vm._m(0), _vm._v(" "), _c('section', [_vm._m(1), _vm._v(" "), _c('post-preview', {
+    attrs: {
+      "user": _vm.user
+    }
+  })], 1)])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "main-page-header"
@@ -23246,7 +23310,7 @@ return Vue$3;
 /* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(15);
+module.exports = __webpack_require__(12);
 
 
 /***/ })

@@ -38,7 +38,7 @@
 									<div class="post-preview-tags">
 										<span class="tag" v-for="tag in post.tags">
 											<router-link :to="{ name: 'categories', params: { tag: tag } }" tag="a" exact >
-													{{ tag }}
+												{{ tag }}
 											</router-link>
 										</span>
 									</div>
@@ -57,8 +57,8 @@
 												</div>
 											</router-link>
 										</div>
-										<div class="post-like" v-on:click="like(post)">
-											<span class="icon like" v-bind:class=""></span>
+										<div class="post-like" v-on:click="like(post, $event)">
+											<span v-bind:class="checkLikes(post.likes)"></span>
 											<div class="like-count">
 												{{ post.likes.length }}
 											</div>
@@ -93,9 +93,11 @@
 
 import _ from '../bower/lodash/dist/lodash.min.js'
 import moment from '../bower/moment/min/moment-with-locales.min.js'
+import { Event } from '../js/index.js'
 
 export default {
 	name: 'post-preview',
+	props: ['user'],
 	data: function(){
 		return {
 			posts: null,
@@ -138,16 +140,34 @@ export default {
 			    this.error = 'AJAX Request failed';
 			});
 		},
-		like: function(post){
+		like: function(post, event){
 			var post = post;
+			var self = this;
+			var elem = event.currentTarget;
 			this.$http.get('/api/posts/' + post.href + '/like').then(function(response){
 			    // success callback
-			    console.log(response.data.data.likes.length);
-			    post.likes = response.data.data.likes;
+			    post.likes = response.data.data.post.likes;
+			    self.user.likes = response.data.data.user.likes;
 			}, function(response){
 			    // error callback
 			    console.log('error:', response);
 			});
+		},
+		checkLikes: function(likes){
+			var self = this;
+		
+			if (this.user && this.user.likes){
+
+				var like = _.intersectionBy(this.user.likes, likes, '_id');
+
+				if (like.length > 0){
+					return 'icon like';
+				} else {
+					return 'icon like-disabled';
+				}
+			} else {
+				return 'icon like-disabled';
+			}
 		}
 	},
 	created: function(){

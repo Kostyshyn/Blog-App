@@ -22,7 +22,7 @@
 
 				</div>
 			</div>	
-			<post-preview></post-preview>
+			<post-preview :user="user"></post-preview>
 		</section>
 	</div>
 </template>
@@ -37,6 +37,7 @@ import PostPreview from './PostPreview.vue'
 
 export default {
 	components: { PostPreview },
+	props: ['user'],
 	data: function(){
 		return {
 

@@ -7,7 +7,10 @@ module.exports = function(passport){
 		done(null, user._id);
 	});
 	passport.deserializeUser(function(id, done){
-		User.findById(id, function(err, user){
+		User.findById(id).populate({
+			path: 'likes',
+			select: 'post'
+		}).exec(function(err, user){
 			done(err, user);
 		});
 	});

@@ -87,8 +87,12 @@ exports.deletePost = function(req, res, next){
 exports.like = function(req, res, next){
 	var href = req.params.href;
 	var currentUser = req.user.id;
-	Post.like(href, currentUser).then(function(post){
-		sendSuccess(res, post);
+	Post.like(href, currentUser).then(function(data){
+
+		sendSuccess(res, {
+			post: data.post,
+			user: data.user
+		});
 	}).catch(function(err){
 		next(err);
 	});
