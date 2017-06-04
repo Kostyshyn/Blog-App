@@ -32,6 +32,10 @@ var postSchema = mongoose.Schema({
 		type: Array,
 		default: 'Software Development'
 	},
+	views: {
+		type: Number,
+		default: 0	
+	},
 	href: {
 		type: String,
 		unique: true,
@@ -100,7 +104,14 @@ module.exports.getPostByHref = function(href){
 			if (err){
 				reject(err);
 			} else {
-				resolve(post);
+				post.views++;
+				post.save(function(err){
+					if (err){
+						reject(err);
+					} else {
+						resolve(post);
+					}
+				});
 			}
 		});
 	});

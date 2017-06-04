@@ -4399,6 +4399,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4536,6 +4545,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -4564,13 +4575,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			this.$http.get('/api/posts').then(function (response) {
 				// success callback
 
-				// this.posts = response.data.data;
+				var posts = response.data.data;
 
-				var self = this;
-				setTimeout(function () {
+				posts.sort(function (a, b) {
+					return b.views - a.views;
+				});
 
-					self.posts = response.data.data;
-				}, 3000);
+				this.posts = posts;
+
+				// var self = this;
+				// setTimeout(function(){
+
+				// 	self.posts = response.data.data;
+
+				// }, 3000);
 			}, function (response) {
 				// error callback
 				// this.error = response.body.message;
@@ -7710,7 +7728,7 @@ exports = module.exports = __webpack_require__(30)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -8661,11 +8679,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "exact": ""
       }
     }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(tag) + "\n\t\t\t\t\t\t\t\t\t\t")])], 1)
-  }))]), _vm._v(" "), _c('div', {
+  })), _vm._v(" "), _c('div', {
+    staticClass: "main-post-cover"
+  })]), _vm._v(" "), _c('div', {
     staticClass: "main-post-text"
-  }, [_c('p', [_vm._v(_vm._s(_vm.post.text))])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
+  }, [_c('p', [_vm._v(_vm._s(_vm.post.text))])]), _vm._v(" "), _c('div', {
+    staticClass: "main-post-controll"
+  }, [_vm._m(1), _vm._v(" "), _c('div', {
+    staticClass: "post-views"
+  }, [_c('span', {
+    staticClass: "icon view-icon"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "views-count"
+  }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t" + _vm._s(_vm.post.views) + "\n\t\t\t\t\t\t\t\t\t")])]), _vm._v(" "), _c('div', {
+    staticClass: "post-like"
+  }, [_c('span', {
+    staticClass: "icon like"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "like-count"
+  }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t" + _vm._s(_vm.post.likes.length) + "\n\t\t\t\t\t\t\t\t\t")])])])])])])]), _vm._v(" "), _c('div', {
     staticClass: "divider"
-  })])])])]), _vm._v(" "), _c('comments', {
+  }), _vm._v(" "), _c('comments', {
     attrs: {
       "comments": _vm.post.comments,
       "href": _vm.post.href
@@ -8677,21 +8711,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('p', [_c('em', [_vm._v("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, nisi?")])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "main-post-controll"
-  }, [_c('div', {
     staticClass: "post-bookmark"
   }, [_c('a', {
     staticClass: "button",
     attrs: {
       "href": ""
     }
-  }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\tAdd to bookmarks\n\t\t\t\t\t\t\t\t\t")])]), _vm._v(" "), _c('div', {
-    staticClass: "post-like"
-  }, [_c('span', {
-    staticClass: "icon like big_icon"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "like-count"
-  }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t13\n\t\t\t\t\t\t\t\t\t")])])])
+  }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\tAdd to bookmarks\n\t\t\t\t\t\t\t\t\t")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -9249,11 +9275,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         })
       }), _vm._v(" "), _c('div', {
         staticClass: "post-author-name"
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(post.author.username) + "\t\n\t\t\t\t\t\t\t\t\t\t\t")])])]), _vm._v(" "), _c('div', {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t" + _vm._s(post.author.username) + "\t\n\t\t\t\t\t\t\t\t\t")])])]), _vm._v(" "), _c('div', {
         staticClass: "post-date"
       }, [_c('p', [_c('span', {
         staticClass: "icon calendar"
-      }), _vm._v("\n\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(_vm._f("formatDate")(post.date)) + "\n\t\t\t\t\t\t\t\t\t\t")])])]), _vm._v(" "), _vm._m(0, true), _vm._v(" "), _c('div', {
+      }), _vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(_vm._f("formatDate")(post.date)) + "\n\t\t\t\t\t\t\t\t")])])]), _vm._v(" "), _vm._m(0, true), _vm._v(" "), _c('div', {
         staticClass: "post-preview-info"
       }, [_c('div', {
         staticClass: "post-preview-header"
@@ -9289,7 +9315,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(tag) + "\n\t\t\t\t\t\t\t\t\t\t")])], 1)
       })), _vm._v(" "), _c('div', {
         staticClass: "post-preview-controll"
-      }, [_vm._m(1, true), _vm._v(" "), _c('div', {
+      }, [_c('div', {
+        staticClass: "post-views"
+      }, [_c('span', {
+        staticClass: "icon view-icon"
+      }), _vm._v(" "), _c('div', {
+        staticClass: "views-count"
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(post.views) + "\n\t\t\t\t\t\t\t\t\t\t")])]), _vm._v(" "), _c('div', {
         staticClass: "post-comment-icon"
       }, [_c('router-link', {
         attrs: {
@@ -9328,14 +9360,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "post-preview-head"
   })])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "post-views"
-  }, [_c('span', {
-    staticClass: "icon view-icon"
-  }), _vm._v(" "), _c('div', {
-    staticClass: "views-count"
-  }, [_vm._v("0")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

@@ -45,7 +45,9 @@
 									<div class="post-preview-controll">
 										<div class="post-views">
 											<span class="icon view-icon"></span>
-											<div class="views-count">0</div>
+											<div class="views-count">
+												{{ post.views }}
+											</div>
 										</div>
 										<div class="post-comment-icon">
 											<router-link to="/posts" tag="a">
@@ -115,14 +117,20 @@ export default {
 			this.$http.get('/api/posts').then(function(response){
 			    // success callback
 
-			    // this.posts = response.data.data;
+			    var posts = response.data.data;
 
-			    var self = this;
-			    setTimeout(function(){
+			    posts.sort(function(a, b){
+			    	return b.views - a.views;
+			    });
 
-			    	self.posts = response.data.data;
+			    this.posts = posts;
 
-			    }, 3000);
+			    // var self = this;
+			    // setTimeout(function(){
+
+			    // 	self.posts = response.data.data;
+
+			    // }, 3000);
 
 			}, function(response){
 			    // error callback

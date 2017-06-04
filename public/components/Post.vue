@@ -34,6 +34,9 @@
 											</router-link>
 										</span>
 									</div>
+									<div class="main-post-cover">
+										
+									</div>
 								</div>
 								<div class="main-post-text">
 									<p>{{ post.text }}</p>
@@ -44,18 +47,24 @@
 											Add to bookmarks
 										</a>
 									</div>
+									<div class="post-views">
+										<span class="icon view-icon"></span>
+										<div class="views-count">
+											{{ post.views }}
+										</div>
+									</div>
 									<div class="post-like">
-										<span class="icon like big_icon"></span>
+										<span class="icon like"></span>
 										<div class="like-count">
-											13
+											{{ post.likes.length }}
 										</div>
 									</div>
 								</div>
-								<div class="divider"></div>
 							</div>
 						</div>
 					</div>
-				</section>				
+				</section>
+				<div class="divider"></div>			
 				<!-- comments list and form -->
 				<comments :comments="post.comments" :href="post.href"></comments>
 			</div>

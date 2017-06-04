@@ -64,6 +64,9 @@
 	.main-post-controll {
 		text-align: right;
 	}
+	.main-post-controll .post-views {
+		left: 180px;
+	}
 	.comment-form .button {
 		width: 100%;
 	}
