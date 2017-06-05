@@ -28,7 +28,13 @@
 			</div>
 			<ul class="navbar_buttons" v-if="user">
 				<li>
-					<router-link to="/profile" tag="a" class="button white">Profile</router-link>	
+					<router-link to="/profile" tag="a" class="profile-button">
+						<div class="user-avatar" v-bind:style="{ 'background-image': 'url(../img/' + user.profile_img + ');' }">
+						</div>
+						<div class="button main-button">
+							{{ user.username }}
+						</div>
+					</router-link>	
 				</li>
 			</ul>
 			<ul class="navbar_buttons" v-else-if="!isAuth">

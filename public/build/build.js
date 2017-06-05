@@ -4306,6 +4306,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -9226,12 +9232,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Sign Up")])], 1) : _vm._e()])]), _vm._v(" "), (_vm.user) ? _c('ul', {
     staticClass: "navbar_buttons"
   }, [_c('li', [_c('router-link', {
-    staticClass: "button white",
+    staticClass: "profile-button",
     attrs: {
       "to": "/profile",
       "tag": "a"
     }
-  }, [_vm._v("Profile")])], 1)]) : (!_vm.isAuth) ? _c('ul', {
+  }, [_c('div', {
+    staticClass: "user-avatar",
+    style: ({
+      'background-image': 'url(../img/' + _vm.user.profile_img + ');'
+    })
+  }), _vm._v(" "), _c('div', {
+    staticClass: "button main-button"
+  }, [_vm._v("\n\t\t\t\t\t\t" + _vm._s(_vm.user.username) + "\n\t\t\t\t\t")])])], 1)]) : (!_vm.isAuth) ? _c('ul', {
     staticClass: "navbar_buttons"
   }, [_c('li', [_c('router-link', {
     staticClass: "button",

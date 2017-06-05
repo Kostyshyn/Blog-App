@@ -48,7 +48,7 @@
 }
 .main-article {
 	color: grey;
-	height: 150px;
+	/*height: 150px;*/
 	text-align: center;
 	padding: 20px;
 }
@@ -527,7 +527,7 @@ aside {
 /*profile*/
 
 .profile {
-	
+	padding-top: 30px;
 }
 .profile h2 {
 	color: grey;
@@ -555,6 +555,28 @@ aside {
 .profile-content {
 	padding: 20px;
 	height: auto;
+}
+
+/*navbar profile button*/
+.profile-button {
+	display: inline-block;
+	width: auto;
+	position: relative;
+}
+.profile-button .button {
+	margin-left: 50px;
+}
+.user-avatar {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-position: center;
+	background-size: cover;
+	background-color: #ffd232;
+	background-image: url('../img/user.png');
+	border-radius: 50%;
+	position: absolute;
+	top: 10px;
 }
 
 /*transition*/
