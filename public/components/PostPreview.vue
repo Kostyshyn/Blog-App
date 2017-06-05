@@ -1,5 +1,16 @@
 <template>
 	<div>
+		<div class="grid-row">
+			<div class="col-12">
+
+				<div class="posts-preview-filter">
+					<button class="button" v-on:click="popular">Popular</button>
+					<button class="button" v-on:click="latest">Latest</button>
+					<button class="button" v-on:click="topRated">Top rated</button>
+				</div>
+
+			</div>
+		</div>
 		<div class="posts-preview" v-if="posts">
 			<div class="grid-row" v-for="row in chunk">
 				<div class="col-4" v-for="post in row">
@@ -121,10 +132,6 @@ export default {
 
 			    var posts = response.data.data;
 
-			    posts.sort(function(a, b){
-			    	return b.views - a.views;
-			    });
-
 			    this.posts = posts;
 
 			    // var self = this;
@@ -168,6 +175,19 @@ export default {
 			} else {
 				return 'icon like-disabled';
 			}
+		},
+		popular: function(){
+			this.posts.sort(function(a, b){
+			    return b.views - a.views;
+			});
+		},
+		topRated: function(){
+			this.posts.sort(function(a, b){
+			    return b.likes.length - a.likes.length;
+			});
+		},
+		latest: function(){
+			console.log('latest')
 		}
 	},
 	created: function(){

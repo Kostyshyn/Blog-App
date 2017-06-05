@@ -52,6 +52,10 @@
 	text-align: center;
 	padding: 20px;
 }
+.posts-preview-filter {
+	padding: 20px;
+	text-align: center;
+}
 /* Post  preview */
 .post-preview {
 	width: 100%;
@@ -214,7 +218,7 @@
 	color: white;
 	border-radius: 3px;
 	margin-right: 5px;
-	/*background-color: #1abc9c;*/
+	/*background-color: #bf3eff;*/
 	/*background-color: #1ca7ea;*/
 	background-color: #40e0d0;
 
@@ -372,10 +376,8 @@ aside {
 }
 .comment-info {
 	text-align: left;
-	padding-bottom: 15px;
 	position: relative;
 	text-align: left;
-	border-bottom: 1px solid #cac9cd;
 }
 .comment-date, .comment-author {
 	padding-top: 10px;

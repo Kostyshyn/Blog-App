@@ -4587,6 +4587,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4618,10 +4629,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				// success callback
 
 				var posts = response.data.data;
-
-				posts.sort(function (a, b) {
-					return b.views - a.views;
-				});
 
 				this.posts = posts;
 
@@ -4665,6 +4672,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			} else {
 				return 'icon like-disabled';
 			}
+		},
+		popular: function () {
+			this.posts.sort(function (a, b) {
+				return b.views - a.views;
+			});
+		},
+		topRated: function () {
+			this.posts.sort(function (a, b) {
+				return b.likes.length - a.likes.length;
+			});
+		},
+		latest: function () {
+			console.log('latest');
 		}
 	},
 	created: function () {
@@ -9319,7 +9339,28 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [(_vm.posts) ? _c('div', {
+  return _c('div', [_c('div', {
+    staticClass: "grid-row"
+  }, [_c('div', {
+    staticClass: "col-12"
+  }, [_c('div', {
+    staticClass: "posts-preview-filter"
+  }, [_c('button', {
+    staticClass: "button",
+    on: {
+      "click": _vm.popular
+    }
+  }, [_vm._v("Popular")]), _vm._v(" "), _c('button', {
+    staticClass: "button",
+    on: {
+      "click": _vm.latest
+    }
+  }, [_vm._v("Latest")]), _vm._v(" "), _c('button', {
+    staticClass: "button",
+    on: {
+      "click": _vm.topRated
+    }
+  }, [_vm._v("Top rated")])])])]), _vm._v(" "), (_vm.posts) ? _c('div', {
     staticClass: "posts-preview"
   }, _vm._l((_vm.chunk), function(row) {
     return _c('div', {

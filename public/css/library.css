@@ -50,9 +50,9 @@ section {
     display: none;
 }
 .box {
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-	/*box-shadow: 0px 0px 3px 1px #d4d4d5;*/
-	/*box-shadow: 0px 1px 3px 0px #D4D4D5, 0px 0px 0px 1px #D4D4D5;*/
+	/*box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);*/
+	box-shadow: 0px 1px 8px 1px #d4d4d5;
+	/*box-shadow: 0px 1px 3px 0px #D4D4D5, 0px 2px 6px 1px #D4D4D5;*/
 	background-color: white;
 	border-radius: 4px;
 }
@@ -75,6 +75,7 @@ section {
 }
 .calendar {
 	background-image: url('../img/calendar-grey.png');
+	display: none;
 }
 .like {
 	background-image: url('../img/like.png')
@@ -83,10 +84,10 @@ section {
 	background-image: url('../img/like-disabled.png');
 }
 .bookmark {
-	background-image: url('../img/bookmark-white.png')
+	background-image: url('../img/bookmark-white.png');
 }
 .comment-icon {
-	background-image: url('../img/comment.png')
+	background-image: url('../img/comment.png');
 }
 .view-icon {
 	background-image: url('../img/eye.png');
@@ -131,17 +132,17 @@ section {
 }
 .primary {
 	color: white;
-	background-color: #1ca7ea;
+	background-color: #00ced1;
 }
 .primary:hover {
-	background-color: #1996d2;
+	background-color: #00a4a7;
 }
 .success {
 	color: white;
-	background-color: #1abc9c;
+	background-color: #00ff80;
 }
 .success:hover {
-	background-color: #14967c;
+	background-color: #00e573;
 }
 .yellow {
 	color: white;
