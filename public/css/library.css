@@ -260,7 +260,7 @@ nav {
 	height: 60px;
 	line-height: 60px;
 	float: right;
-	font-weight: bold;
+	color: grey;	
 }
 .navbar {
 	width: 80%;
@@ -293,6 +293,9 @@ nav {
 	padding-left: 15px;
 	transition: .2s;
 }
+.navbar .menu .divider {
+	height: 2px;
+}
 .navbar .menu li .active {
 	color: black;
 }
@@ -314,6 +317,10 @@ nav {
 	height: 40px;
 	line-height: 40px;
 	margin-bottom: 10px;
+}
+.navbar .menu .hidden_button .profile-button {
+	margin-top: 10px;
+	text-align: center;
 }
 .navbar .menu .hidden_button a.main-button {
 	line-height: 36px;

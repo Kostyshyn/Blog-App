@@ -58,6 +58,12 @@
 	.post-preview {
 		margin-bottom: 10px;
 	}
+	.post-preview-img {
+		display: none;
+	}
+	.post-preview-info {
+		padding: 0px 15px 15px 15px; 
+	}
 	.main-post-author, .comment-author {
 		width: 39%;
 	}

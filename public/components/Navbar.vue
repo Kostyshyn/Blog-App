@@ -17,8 +17,15 @@
 					<li><router-link to="/" tag="a" exact >Home</router-link></li>
 					<li><router-link to="/posts" tag="a">Posts</router-link></li>
 					<li><router-link to="/contacts" tag="a">Contacts</router-link></li>
+					<li class="divider"></li>
 					<li class="hidden_button" v-if="user">
-						<router-link to="/profile" tag="a" class="button success">Profile</router-link>	
+						<router-link to="/profile" tag="a" class="profile-button">
+							<div class="user-avatar" v-bind:style="{ 'background-image': 'url(../img/' + user.profile_img + ');' }">
+							</div>
+							<div class="button main-button">
+								{{ user.username }}
+							</div>
+						</router-link>	
 					</li>
 					<li class="hidden_button" v-else-if="!isAuth">
 						<router-link to="/login" tag="a" class="button">Login</router-link>
