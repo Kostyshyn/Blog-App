@@ -50,7 +50,6 @@ section {
     display: none;
 }
 .box {
-	/*box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);*/
 	box-shadow: 0px 1px 8px 1px #d4d4d5;
 	/*box-shadow: 0px 1px 3px 0px #D4D4D5, 0px 2px 6px 1px #D4D4D5;*/
 	background-color: white;
@@ -208,6 +207,7 @@ nav {
 .desktop_menu ul {
 	margin: 0;
 	padding: 0;
+	margin-left: 110px;
 }
 .desktop_menu ul li {
 	float: left;
@@ -218,7 +218,7 @@ nav {
 }
 .desktop_menu ul li a {
 	text-decoration: none;	
-	color: black;
+	color: grey;
 	font-size: 18px;
 }
 .desktop_menu ul li a::after {
@@ -231,6 +231,9 @@ nav {
 }
 .desktop_menu ul li a:hover::after {
     width: 100%;
+}
+.desktop_menu ul li .active {
+	color: black;
 }
 .desktop_menu ul li .active::after {
 	content: '';
@@ -266,6 +269,27 @@ nav {
 	width: 80%;
 	margin: 0 auto;
 	max-width: 1400px;
+	position: relative;
+}
+.navbar .desktop_menu .logo {
+	display: inline-block;
+	width: auto;
+	height: 60px;
+	line-height: 60px;
+	position: absolute;
+	left: 25px;
+	top: -21px;
+	color: #40e0d0;
+}
+.navbar .mobile_menu .logo {
+	display: inline-block;
+	width: auto;
+	height: 60px;
+	line-height: 60px;
+	position: absolute;
+	left: 15px;
+	top: 0px;
+	color: #40e0d0;
 }
 .navbar .navbar_buttons {
 	margin: 0;

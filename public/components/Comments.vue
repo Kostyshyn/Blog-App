@@ -35,7 +35,7 @@ export default {
 	components: {
 		Comment
 	},
-	props: ['comments', 'href'],
+	props: ['comments', 'href', 'user'],
 	data: function(){
 		return {
 			text: null,

@@ -3908,7 +3908,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	components: {
 		Comment: __WEBPACK_IMPORTED_MODULE_0__Comment_vue___default.a
 	},
-	props: ['comments', 'href'],
+	props: ['comments', 'href', 'user'],
 	data: function () {
 		return {
 			text: null,
@@ -4055,6 +4055,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PostPreview_vue__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PostPreview_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__PostPreview_vue__);
+//
+//
 //
 //
 //
@@ -4319,6 +4321,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -4509,6 +4513,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bower_moment_min_moment_with_locales_min_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__bower_moment_min_moment_with_locales_min_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_index_js__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_index_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__js_index_js__);
+//
+//
 //
 //
 //
@@ -7849,7 +7855,7 @@ exports = module.exports = __webpack_require__(30)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -8796,7 +8802,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t" + _vm._s(_vm.post.likes.length) + "\n\t\t\t\t\t\t\t\t\t")])])])])]), _vm._v(" "), _vm._m(2)])]), _vm._v(" "), _c('comments', {
     attrs: {
       "comments": _vm.post.comments,
-      "href": _vm.post.href
+      "href": _vm.post.href,
+      "user": _vm.user
     }
   })], 1)]) : _vm._e()])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -9176,7 +9183,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "navbar"
   }, [_c('div', {
     staticClass: "desktop_menu"
-  }, [_c('ul', [_c('li', [_c('router-link', {
+  }, [_c('ul', [_vm._m(0), _vm._v(" "), _c('li', [_c('router-link', {
     attrs: {
       "to": "/",
       "tag": "a",
@@ -9194,7 +9201,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("Contacts")])], 1)])]), _vm._v(" "), _c('div', {
     staticClass: "mobile_menu"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
+  }, [_vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('div', {
     staticClass: "open_header"
   }, [_vm._v("Menu")]), _vm._v(" "), _c('ul', {
     staticClass: "menu hidden"
@@ -9276,6 +9283,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("Sign Up")])], 1)]) : _vm._e()])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('li', {
+    staticClass: "logo"
+  }, [_c('h2', [_vm._v("WebDev")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', {
+    staticClass: "logo"
+  }, [_c('h2', [_vm._v("WebDev")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "open_button"
   }, [_c('img', {
@@ -9299,7 +9314,7 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "comment box"
+    staticClass: "comment"
   }, [_c('div', {
     staticClass: "comment-info"
   }, [_c('div', {
@@ -9368,7 +9383,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
+  return _c('div', [(_vm.posts) ? _c('div', [_c('div', {
     staticClass: "grid-row"
   }, [_c('div', {
     staticClass: "col-12"
@@ -9389,7 +9404,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.topRated
     }
-  }, [_vm._v("Top rated")])])])]), _vm._v(" "), (_vm.posts) ? _c('div', {
+  }, [_vm._v("Top rated")])])])]), _vm._v(" "), _c('div', {
     staticClass: "posts-preview"
   }, _vm._l((_vm.chunk), function(row) {
     return _c('div', {
@@ -9416,11 +9431,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         })
       }), _vm._v(" "), _c('div', {
         staticClass: "post-author-name"
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t" + _vm._s(post.author.username) + "\t\n\t\t\t\t\t\t\t\t\t")])])]), _vm._v(" "), _c('div', {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(post.author.username) + "\t\n\t\t\t\t\t\t\t\t\t\t")])])]), _vm._v(" "), _c('div', {
         staticClass: "post-date"
       }, [_c('p', [_c('span', {
         staticClass: "icon calendar"
-      }), _vm._v("\n\t\t\t\t\t\t\t\t\t" + _vm._s(_vm._f("formatDate")(post.date)) + "\n\t\t\t\t\t\t\t\t")])])]), _vm._v(" "), _vm._m(0, true), _vm._v(" "), _c('div', {
+      }), _vm._v("\n\t\t\t\t\t\t\t\t\t\t" + _vm._s(_vm._f("formatDate")(post.date)) + "\n\t\t\t\t\t\t\t\t\t")])])]), _vm._v(" "), _vm._m(0, true), _vm._v(" "), _c('div', {
         staticClass: "post-preview-info"
       }, [_c('div', {
         staticClass: "post-preview-header"
@@ -9453,7 +9468,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
             "tag": "a",
             "exact": ""
           }
-        }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(tag) + "\n\t\t\t\t\t\t\t\t\t\t")])], 1)
+        }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(tag) + "\n\t\t\t\t\t\t\t\t\t\t\t")])], 1)
       })), _vm._v(" "), _c('div', {
         staticClass: "post-preview-controll"
       }, [_c('div', {
@@ -9462,7 +9477,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "icon view-icon"
       }), _vm._v(" "), _c('div', {
         staticClass: "views-count"
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(post.views) + "\n\t\t\t\t\t\t\t\t\t\t")])]), _vm._v(" "), _c('div', {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(post.views) + "\n\t\t\t\t\t\t\t\t\t\t\t")])]), _vm._v(" "), _c('div', {
         staticClass: "post-comment-icon"
       }, [_c('router-link', {
         attrs: {
@@ -9473,7 +9488,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: "icon comment-icon"
       }), _vm._v(" "), _c('div', {
         staticClass: "comment-icon-count"
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(post.comments.length) + "\n\t\t\t\t\t\t\t\t\t\t\t")])])], 1), _vm._v(" "), _c('div', {
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(post.comments.length) + "\n\t\t\t\t\t\t\t\t\t\t\t\t")])])], 1), _vm._v(" "), _c('div', {
         staticClass: "post-like",
         on: {
           "click": function($event) {
@@ -9484,9 +9499,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         class: _vm.checkLikes(post.likes)
       }), _vm._v(" "), _c('div', {
         staticClass: "like-count"
-      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(post.likes.length) + "\n\t\t\t\t\t\t\t\t\t\t")])])])])])])])])
+      }, [_vm._v("\n\t\t\t\t\t\t\t\t\t\t\t\t" + _vm._s(post.likes.length) + "\n\t\t\t\t\t\t\t\t\t\t\t")])])])])])])])])
     }))
-  })) : _c('div', {
+  }))]) : _c('div', {
     staticClass: "grid-row"
   }, [_c('div', {
     staticClass: "col-12"
@@ -9515,7 +9530,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_vm._m(0), _vm._v(" "), _c('section', [_vm._m(1), _vm._v(" "), _c('post-preview', {
+  return _c('div', [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('section', [_c('post-preview', {
     attrs: {
       "user": _vm.user
     }
@@ -9537,12 +9552,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Get Started")])])])])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
+    staticClass: "main-article"
+  }, [_c('section', [_c('div', {
     staticClass: "grid-row"
   }, [_c('div', {
     staticClass: "col-12"
-  }, [_c('div', {
-    staticClass: "main-article"
-  }, [_c('h1', [_vm._v("Posts")])])])])
+  }, [_c('h1', [_vm._v("Posts")])])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

@@ -12,16 +12,18 @@
 				</div>
 			</section>
 		</div>
-		<section>
-			<div class="grid-row">
-				<div class="col-12">
-					
-					<div class="main-article">
-						<h1>Posts</h1>
-					</div>
+		<div class="main-article">
+			<section>
+				<div class="grid-row">
+					<div class="col-12">
+							
+							<h1>Posts</h1>
 
-				</div>
-			</div>	
+					</div>
+				</div>	
+			</section>
+		</div>
+		<section>
 			<post-preview :user="user"></post-preview>
 		</section>
 	</div>

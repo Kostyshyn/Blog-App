@@ -32,6 +32,9 @@
 	.mobile_menu {
 		display: block;
 	}
+	.navbar .mobile_menu .logo {
+		left: 25px;
+	}
 	.main-post-cover {
 		height: 200px; 
 	}
@@ -48,6 +51,9 @@
 		width: 100%;
 	}
 	.col-4 { width: 100%; }
+	.navbar .mobile_menu .logo {
+		left: 15px;
+	}
 	.main-page-header {
 		height: 200px;
 	}

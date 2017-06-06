@@ -73,7 +73,7 @@
 				</section>
 				<!-- <div class="divider"></div>			 -->
 				<!-- comments list and form -->
-				<comments :comments="post.comments" :href="post.href"></comments>
+				<comments :comments="post.comments" :href="post.href" :user="user"></comments>
 			</div>
 		</div>
 	</div>

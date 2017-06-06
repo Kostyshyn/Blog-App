@@ -1,87 +1,89 @@
 <template>
 	<div>
-		<div class="grid-row">
-			<div class="col-12">
+		<div v-if="posts">
+			<div class="grid-row">
+				<div class="col-12">
 
-				<div class="posts-preview-filter">
-					<button class="button" v-on:click="popular">Popular</button>
-					<button class="button" v-on:click="latest">Latest</button>
-					<button class="button" v-on:click="topRated">Top rated</button>
+					<div class="posts-preview-filter">
+						<button class="button" v-on:click="popular">Popular</button>
+						<button class="button" v-on:click="latest">Latest</button>
+						<button class="button" v-on:click="topRated">Top rated</button>
+					</div>
+
 				</div>
-
 			</div>
-		</div>
-		<div class="posts-preview" v-if="posts">
-			<div class="grid-row" v-for="row in chunk">
-				<div class="col-4" v-for="post in row">
-					<div class="post-preview-wrap">
-						<div class="post-preview box">
-							<div class="post-info">
-								<div class="post-author">
-									<a href="">
-										<div class="post-author-avatar" v-bind:style="{ 'background-image': 'url(../img/' + post.author.profile_img + ');' }">
-										</div>
-										<div class="post-author-name">
-											{{ post.author.username }}	
-										</div>
-									</a>
-								</div>
-								<div class="post-date">
-									<p><span class="icon calendar"></span>
-										{{ post.date | formatDate }}
-									</p>
-								</div>
-							</div>
-							<div class="post-preview-img">
-								<div class="post-preview-head">									
-								</div>
-							</div>
-							<div class="post-preview-info">
-								<div class="post-preview-header">
-
-									<h1>
-										<router-link :to="{ name: 'post', params: {
-											href: post.href
-										} }" tag="a" exact >{{ post.title }}</router-link>
-									</h1>	
-								</div>
-								<div class="post-preview-content">
-									<div class="post-preview-tags">
-										<span class="tag" v-for="tag in post.tags">
-											<router-link :to="{ name: 'categories', params: { tag: tag } }" tag="a" exact >
-												{{ tag }}
-											</router-link>
-										</span>
+			<div class="posts-preview">
+				<div class="grid-row" v-for="row in chunk">
+					<div class="col-4" v-for="post in row">
+						<div class="post-preview-wrap">
+							<div class="post-preview box">
+								<div class="post-info">
+									<div class="post-author">
+										<a href="">
+											<div class="post-author-avatar" v-bind:style="{ 'background-image': 'url(../img/' + post.author.profile_img + ');' }">
+											</div>
+											<div class="post-author-name">
+												{{ post.author.username }}	
+											</div>
+										</a>
 									</div>
-									<div class="post-preview-controll">
-										<div class="post-views">
-											<span class="icon view-icon"></span>
-											<div class="views-count">
-												{{ post.views }}
-											</div>
+									<div class="post-date">
+										<p><span class="icon calendar"></span>
+											{{ post.date | formatDate }}
+										</p>
+									</div>
+								</div>
+								<div class="post-preview-img">
+									<div class="post-preview-head">									
+									</div>
+								</div>
+								<div class="post-preview-info">
+									<div class="post-preview-header">
+
+										<h1>
+											<router-link :to="{ name: 'post', params: {
+												href: post.href
+											} }" tag="a" exact >{{ post.title }}</router-link>
+										</h1>	
+									</div>
+									<div class="post-preview-content">
+										<div class="post-preview-tags">
+											<span class="tag" v-for="tag in post.tags">
+												<router-link :to="{ name: 'categories', params: { tag: tag } }" tag="a" exact >
+													{{ tag }}
+												</router-link>
+											</span>
 										</div>
-										<div class="post-comment-icon">
-											<router-link to="/posts" tag="a">
-												<span class="icon comment-icon"></span>
-												<div class="comment-icon-count">
-													{{ post.comments.length }}
+										<div class="post-preview-controll">
+											<div class="post-views">
+												<span class="icon view-icon"></span>
+												<div class="views-count">
+													{{ post.views }}
 												</div>
-											</router-link>
-										</div>
-										<div class="post-like" v-on:click="like(post, $event)">
-											<span v-bind:class="checkLikes(post.likes)"></span>
-											<div class="like-count">
-												{{ post.likes.length }}
 											</div>
-										</div>
-									</div>	
+											<div class="post-comment-icon">
+												<router-link to="/posts" tag="a">
+													<span class="icon comment-icon"></span>
+													<div class="comment-icon-count">
+														{{ post.comments.length }}
+													</div>
+												</router-link>
+											</div>
+											<div class="post-like" v-on:click="like(post, $event)">
+												<span v-bind:class="checkLikes(post.likes)"></span>
+												<div class="like-count">
+													{{ post.likes.length }}
+												</div>
+											</div>
+										</div>	
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>		
-			</div>
-		</div>	
+					</div>		
+				</div>
+			</div>		
+		</div>
 		<div class="grid-row"  v-else>
 			<div class="col-12">
 				<div class="preloader">
@@ -94,7 +96,7 @@
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</div>
 
 </template>

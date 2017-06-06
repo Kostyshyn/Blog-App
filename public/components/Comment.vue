@@ -1,5 +1,5 @@
 <template>
-	<div class="comment box">
+	<div class="comment">
 		<div class="comment-info">
 			<div class="comment-author">
 				<a href="">

@@ -3,12 +3,14 @@
 		<div class="navbar">
 			<div class="desktop_menu">
 				<ul>
+					<li class="logo"><h2>WebDev</h2></li>
 					<li><router-link to="/" tag="a" exact >Home</router-link></li>
 					<li><router-link to="/posts" tag="a">Posts</router-link></li>
 					<li><router-link to="/contacts" tag="a">Contacts</router-link></li>
 				</ul>
 			</div>
 			<div class="mobile_menu">
+				<span class="logo"><h2>WebDev</h2></span>
 				<div class="open_button">
 					<img src="img/list-menu-black.png" alt="">
 				</div>

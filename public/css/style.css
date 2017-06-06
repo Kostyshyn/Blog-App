@@ -2,7 +2,7 @@
 	width: 100%;
 	min-height: 100vh;
 	height: auto;
-	padding-bottom: 20px;
+	/*background-color: #eee;*/
 }
 .divider {
 	background-color: #cac9cd;
@@ -36,7 +36,6 @@
 	background-position: center;
 	background-size: cover;
 	background-image: url('../img/gradient-sea.jpg');
-	margin-bottom: 5px;
 	text-align: center;
 }
 .page-top .button {
@@ -48,9 +47,10 @@
 }
 .main-article {
 	color: grey;
-	/*height: 150px;*/
+	height: auto;
 	text-align: center;
 	padding: 20px;
+	background-color: white;
 }
 .posts-preview-filter {
 	padding: 20px;
@@ -69,7 +69,7 @@
 	height: 170px;
 	background-position: center;
 	background-size: cover;
-	background-image: url('../img/gradient.jpg');
+	background-image: url('../img/FrontEndDev.jpg');
 	text-align: center;
 	padding: 20px ;
 }
@@ -241,7 +241,7 @@
 .post {
 	width: 100%;
 	height: auto;
-	padding: 20px 0px;
+	padding-top: 30px;
 }
 .post-header {
 	border-bottom: 1px solid #cac9cd;
@@ -373,8 +373,7 @@ aside {
 	margin-bottom: 15px;
 }
 .comment {
-	padding: 15px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 .comment-info {
 	text-align: left;
@@ -422,8 +421,11 @@ aside {
 	height: 40px;	
 }
 .comment-text {
-	padding-top: 12px;
+	margin-top: 5px;
+	border-radius: 4px;
+	padding: 15px;
 	color: #333;
+	background-color: #eee;
 	/*border-bottom: 2px solid #cac9cd;*/
 }
 
