@@ -1,0 +1,29 @@
+{
+  "name": "blog-app",
+  "description": "blog",
+  "main": "index.js",
+  "authors": [
+    "kostyshyn@ua.fm"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "blog",
+    "express",
+    "vuejs",
+    "mongodb",
+    "SPA"
+  ],
+  "homepage": "https://github.com/Kostyshyn/Blog-App",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1"
+  }
+}
